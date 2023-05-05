@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dury&#39;s Cards</title>
+  
+  
+  <link href="http://hs.dury.cn/atom.xml" rel="self"/>
+  
+  <link href="http://hs.dury.cn/"/>
+  <updated>2023-04-27T01:52:00.000Z</updated>
+  <id>http://hs.dury.cn/</id>
+  
+  <author>
+    <name>Dury Ding</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hero 汇总</title>
+    <link href="http://hs.dury.cn/2023/04/26/Hero-%E6%B1%87%E6%80%BB/"/>
+    <id>http://hs.dury.cn/2023/04/26/Hero-%E6%B1%87%E6%80%BB/</id>
+    <published>2023-04-26T07:57:48.000Z</published>
+    <updated>2023-04-27T01:52:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>记录在使用Hexo过程中的一些心得体会。</p><span id="more"></span><p>在挑选了一些模板测试后发现功能都太多太复杂了，不符合我建立博客的初衷。然后就有了现在使用的模板pure，但是还有些不满意的地方。</p><ol><li>评论功能。这个博客主要是为了记录生活工作中的一些心得和一些防止我忘记的东西，不需要评论也没有精力去管理这些评论。</li><li>摘要功能。主页的文章是有摘要的，但是分类页和标签页没有。以后有可能要写些卡片笔记放在博客里，没有摘要会很不方便。</li><li>代码或内容折叠。最好是内容折叠，这样页面就不会太长影响我快速浏览整个页面。</li><li>历史功能。 页面修改后不知到之前的内容。</li><li>文档加密。</li></ol><p>还有些待解决的问题放在下面，慢慢研究有了解决方案在补上：</p><p>从<a href="https://github.com/theme-next/hexo-theme-next">theme-next&#x2F;hexo-theme-next</a>扒tags没有成功 已经拷贝了scripts&#x2F;tags和source&#x2F;tags的相关代码和修改了css的导入 还是没有成功，看来要系统的学习下主题的制作才能解决这个问题了。也许hexo可以出个系列？</p><h1 id="关闭评论功能"><a href="#关闭评论功能" class="headerlink" title="关闭评论功能"></a>关闭评论功能</h1><p>评论功能是通过_config.pure.yml配置文件中的comment 字段来配置的。但是不能关闭，只能选择不同的服务商。研究了会配置也没找到好的方法。按照我的习惯找不到配置项就直接删代码。没有评论功能的代码他总是能取消这个功能了。通过搜索主题目录在静态页上的一些关键字找到了相关功能在\pure\layout_partial\post\comment.ejs里面。通过这个文件把评论框插入到了页面上。通过清空这个文件顺利删除了所有页面的评论功能。<br>下面是这个页面的备份。</p><a data-toggle="collapse" href="#collapse被清空的"comment.ejs"" aria-expanded="false" class="collapsed">  <i class="icon icon-angle-right text-active"></i><i class="icon icon-angle-down text"></i>被清空的"comment.ejs"</a>  <div id="collapse被清空的"comment.ejs"" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading被清空的"comment.ejs"" aria-expanded="false" style="">          <div class="panel-body">            <div class="collection">            <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (post.comments) &#123; %&gt;</span><br><span class="line">  &lt;section id=&quot;comments&quot;&gt;</span><br><span class="line">  &lt;% if (theme.comment.type === &#x27;disqus&#x27;) &#123; %&gt;</span><br><span class="line">      &lt;div id=&quot;disqus_thread&quot;&gt;</span><br><span class="line">        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.type === &#x27;youyan&#x27;) &#123; %&gt;</span><br><span class="line">      &lt;div id=&quot;uyan_frame&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.type === &#x27;livere&#x27;) &#123; %&gt;</span><br><span class="line">      &lt;div id=&quot;lv-container&quot; data-id=&quot;city&quot; data-uid=&quot;&lt;%= theme.comment.livere.uid %&gt;&quot;&gt;</span><br><span class="line">        &lt;noscript&gt; 为正常使用来必力评论功能请激活JavaScript&lt;/noscript&gt;</span><br><span class="line">      &lt;/div&gt;    </span><br><span class="line">    &lt;% &#125; else if (theme.comment.type === &#x27;gitment&#x27;) &#123; %&gt;</span><br><span class="line"></span><br><span class="line">    &lt;% &#125; else if (theme.comment.type === &#x27;gitalk&#x27;) &#123; %&gt;</span><br><span class="line">           </span><br><span class="line">    &lt;% &#125; else if (theme.comment.type === &#x27;valine&#x27;) &#123; %&gt;</span><br><span class="line">      &lt;div id=&quot;vcomments&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>            </div>            </div>          </div><h1 id="摘要功能。"><a href="#摘要功能。" class="headerlink" title="摘要功能。"></a>摘要功能。</h1><p>一开是看主题介绍和主题所有者的页面都没看到这个功能，以为没有。秉着试一试也花不了多少时间的心思在文章中插入了 !– more – 关键字。没想居然有这个功能。不过只有在主页有显示归档页、分类页和标签页没有。<br>不过有一个地方有就好办。继续通过关键字找到了主页上的代码在pure\layout_partial\archive-post.ejs这里。在通过关键字发现归档、分类和标签都在这里pure\layout_partial\item-post.ejs，那么加上相应的代码一测试果然没问题。</p><a data-toggle="collapse" href="#collapse摘要代码" aria-expanded="false" class="collapsed">  <i class="icon icon-angle-right text-active"></i><i class="icon icon-angle-down text"></i>摘要代码</a>  <div id="collapse摘要代码" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading摘要代码" aria-expanded="false" style="">          <div class="panel-body">            <div class="collection">            <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (post.excerpt)&#123; %&gt;</span><br><span class="line"> &lt;div class=&quot;article-entry text-muted&quot; itemprop=&quot;description&quot;&gt;</span><br><span class="line">   &lt;%- post.excerpt %&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>            </div>            </div>          </div><a data-toggle="collapse" href="#collapse修改后的"item-post.ejs"" aria-expanded="false" class="collapsed">  <i class="icon icon-angle-right text-active"></i><i class="icon icon-angle-down text"></i>修改后的"item-post.ejs"</a>  <div id="collapse修改后的"item-post.ejs"" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading修改后的"item-post.ejs"" aria-expanded="false" style="">          <div class="panel-body">            <div class="collection">            <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (type == &#x27;link&#x27;)&#123; %&gt;</span><br><span class="line">&lt;a href=&quot;&lt;%- url_for(post.path) %&gt;&quot; class=&quot;collection-item&quot; &lt;% if (theme.config.isNewTabLinks)&#123; %&gt; target=&quot;_blank&quot; &lt;%&#125;%&gt;  itemprop=&quot;url&quot;&gt;</span><br><span class="line">  &lt;time datetime=&quot;&lt;%= date_xml(post.date) %&gt;&quot; itemprop=&quot;datePublished&quot;&gt;&lt;%= date(post.date) %&gt;&lt;/time&gt;</span><br><span class="line">  &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; &lt;%= post.title %&gt;</span><br><span class="line"> &lt;% if (post.excerpt)&#123; %&gt;</span><br><span class="line">  &lt;div class=&quot;article-entry text-muted&quot; itemprop=&quot;description&quot;&gt;</span><br><span class="line">    &lt;%- post.excerpt %&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;% &#125; else if (type == &#x27;card&#x27;)&#123; %&gt;</span><br><span class="line">&lt;article class=&quot;panel panel-default hover-shadow hover-grow&quot; itemscope itemtype=&quot;http://schema.org/BlogPosting&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;panel-body&quot;&gt;</span><br><span class="line">     &lt;div class=&quot;article-meta&quot;&gt;</span><br><span class="line">       &lt;time datetime=&quot;&lt;%= date_xml(post.date) %&gt;&quot; itemprop=&quot;datePublished&quot;&gt;&lt;%= date(post.date) %&gt;&lt;/time&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">     &lt;h3 class=&quot;article-title&quot; itemprop=&quot;name&quot;&gt;</span><br><span class="line">       &lt;a class=&quot;article-link&quot; href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%= post.title %&gt;&lt;/a&gt;</span><br><span class="line">     &lt;/h3&gt;</span><br><span class="line"> &lt;% if (post.excerpt)&#123; %&gt;</span><br><span class="line">  &lt;div class=&quot;article-entry text-muted&quot; itemprop=&quot;description&quot;&gt;</span><br><span class="line">    &lt;%- post.excerpt %&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">   &lt;% if (post.tags)&#123; %&gt;</span><br><span class="line">   &lt;div class=&quot;panel-footer&quot;&gt;</span><br><span class="line">     &lt;% post.tags.limit(3).each(function (tag) &#123; %&gt;</span><br><span class="line">      &lt;a href=&quot;&lt;%- url_for(tag.path) %&gt;&quot; class=&quot;label label-default mb&quot;&gt;&lt;%= tag.name %&gt;&lt;/a&gt;</span><br><span class="line">     &lt;% &#125;); %&gt;</span><br><span class="line">     &lt;% if (post.tags.length &gt; 3)&#123; %&gt;</span><br><span class="line">      &lt;span class=&quot;label label-default mb&quot;&gt;···&lt;/span&gt;</span><br><span class="line">     &lt;% &#125;; %&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">   &lt;% &#125; %&gt;</span><br><span class="line">&lt;/article&gt;</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line">&lt;a href=&quot;&lt;%- url_for(post.path) %&gt;&quot; class=&quot;collection-item&quot; &lt;% if (theme.config.isNewTabLinks)&#123; %&gt; target=&quot;_blank&quot; &lt;%&#125;%&gt;  itemprop=&quot;url&quot;&gt;</span><br><span class="line">&lt;time datetime=&quot;&lt;%= date_xml(post.date) %&gt;&quot; itemprop=&quot;datePublished&quot;&gt;&lt;%= date(post.date) %&gt;&lt;/time&gt;</span><br><span class="line">  &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; &lt;%= post.title %&gt;</span><br><span class="line"> &lt;% if (post.excerpt)&#123; %&gt;</span><br><span class="line">  &lt;div class=&quot;article-entry text-muted&quot; itemprop=&quot;description&quot;&gt;</span><br><span class="line">    &lt;%- post.excerpt %&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>            </div>            </div>          </div><h1 id="内容折叠"><a href="#内容折叠" class="headerlink" title="内容折叠"></a>内容折叠</h1><p>通过学习next的note标签做了自己的note标签，不过他的是对文字修饰 而我是折叠代码。</p><a data-toggle="collapse" href="#collapse下面是"note.js"。" aria-expanded="false" class="collapsed">  <i class="icon icon-angle-right text-active"></i><i class="icon icon-angle-down text"></i>下面是"note.js"。</a>  <div id="collapse下面是"note.js"。" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading下面是"note.js"。" aria-expanded="false" style="">          <div class="panel-body">            <div class="collection">            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * note.js | 一个折叠内容的tags</span></span><br><span class="line"><span class="comment"> * themes\pure\scripts\tags\note.js</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">postNote</span>(<span class="params">args, content</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`&lt;a data-toggle=&quot;collapse&quot; href=&quot;#collapse<span class="subst">$&#123;args.join(<span class="string">&#x27; &#x27;</span>)&#125;</span>&quot; aria-expanded=&quot;false&quot; class=&quot;collapsed&quot;&gt;&lt;i class=&quot;icon icon-folder text-active&quot;&gt;&lt;/i&gt;&lt;i class=&quot;icon icon-folder-open text&quot;&gt;&lt;/i&gt;<span class="subst">$&#123;args.join(<span class="string">&#x27; &#x27;</span>)&#125;</span>&lt;/a&gt;</span></span><br><span class="line"><span class="string">  &lt;div id=&quot;collapse<span class="subst">$&#123;args.join(<span class="string">&#x27; &#x27;</span>)&#125;</span>&quot; class=&quot;panel-collapse collapse&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;heading<span class="subst">$&#123;args.join(<span class="string">&#x27; &#x27;</span>)&#125;</span>&quot; aria-expanded=&quot;false&quot; style=&quot;&quot;&gt;</span></span><br><span class="line"><span class="string">          &lt;div class=&quot;panel-body&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;div class=&quot;collection&quot;&gt;</span></span><br><span class="line"><span class="string">            <span class="subst">$&#123;hexo.render.renderSync(&#123;text: content, engine: <span class="string">&#x27;markdown&#x27;</span>&#125;).split(<span class="string">&#x27;\n&#x27;</span>).join(<span class="string">&#x27;&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;`</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hexo.<span class="property">extend</span>.<span class="property">tag</span>.<span class="title function_">register</span>(<span class="string">&#x27;note&#x27;</span>, postNote, &#123;<span class="attr">ends</span>: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>            </div>            </div>          </div><h1 id="历史功能"><a href="#历史功能" class="headerlink" title="历史功能"></a>历史功能</h1><p>历史功能暂时没有想到特别好的方法。现在的解决方案是打开gogs然后将内容同步到上面，虽然不需要通过同步来部署内容但是可以通过这个方法保留历史记录。</p><h1 id="文档加密"><a href="#文档加密" class="headerlink" title="文档加密"></a>文档加密</h1><p>安装<a href="https://github.com/D0n9X1n/hexo-blog-encrypt">hexo-blog-encrypt</a>插件 配置_config.yml文件添加相关配置。然后hexo s 的时候输入密码回车没反应 一直以为是主题的问题。弄了一会没弄好通过F11 控制台发现是没有打开ssl 赶紧在HS上配置nginx然后再试发现一切正常。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;记录在使用Hexo过程中的一些心得体会。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="备忘" scheme="http://hs.dury.cn/categories/%E5%A4%87%E5%BF%98/"/>
+    
+    
+    <category term="服务" scheme="http://hs.dury.cn/tags/%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="备忘" scheme="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/"/>
+    
+    <category term="Hero" scheme="http://hs.dury.cn/tags/Hero/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>艾克森固定IP</title>
+    <link href="http://hs.dury.cn/2023/04/25/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9AIP/"/>
+    <id>http://hs.dury.cn/2023/04/25/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9AIP/</id>
+    <published>2023-04-25T11:05:46.000Z</published>
+    <updated>2023-05-05T03:32:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="81685c5eac1899bf35c4bc70baa06b2af2d6270926e46d20e7598a9530ceed87">d737225af53dad527f40cb9c512e02965124def0f9acf7a839824612da279b6f7fdf99d0cc4b5f0ea6117c0b464ad6cb4fc2fb5f4920ed3e5338dcf75a3c5508f720a40e20a18e8072502572eeabb843bec01884fe12ac1b0bebc6f06afd452f14982dfcf37bed3a09fe5ec59ac9402501ba77e965cea58f490770dc43d24b61309993aefb2b67b5fb7b4b4b33a071da91656b7e8d6f40568fce681101740aec8343efce7945a55c340e54232de3113610f5167552d8032a0872cad097395995a23e46f2561a1fec957c3f0ba08f65341c7171862182c9291810ef2615099bf376766f3b57328a1517fd3a48078c43d392d9ae2d545c7b75cb67bc1d292c11b9099571a9af9a2b81d0d5ab603425e68f25a6ded0c0232ef861c0fbf6b51d10bca3ece0635ada75d417dd21ea48c3b01757ecdd9f23a784c7e89957ad99a3ec940ed0ccc64d4572730602c6994921f1f094ac7eb65373c6d1b324631b6731b2ba5c28e69d4b362a53ab80c07579881ef1280f3d6d864e268824b8bb730fa944912fb0f7e150da6a0bba7149cd5ca29630beeea677921caae398c3bd2380f6835818030de4a055806abe02dfdcb6c3b821c5c708cba2b763f65038d9c685a59b083760dfe0805853bff402ecc802781e3191c7c4ba72a70d6f20135f46ff22d88d892497a4343826789c091e824d4891f14292d7d5c43ce71ec8d250622ff1a3ec1c0ad3e4fdebeda311cabcb8004f2f660630e21a4d2f475098d685ed76a6f92917961d1b4203decf76204a54bd9ff0d3b0429003b75e647afe4278ac8b1baf2942163af8b60ecc591a313d423112f8ea09fc3a03613e473b2b1b9d976bd361caa3efe8f1c1ec25d87e8fea1605cda515ece499d53e58527c0f1418f2e62abad023adf12d82769d1fdc0aaff48f4484b46f61e331588906146f41a85f3c2db76ed72ae8a1350c1547852169ab754e136c884a077cc61bc3baa736f6e65761e4e23533ce849841ad452c0faa9e36dba608aba0fc81b1807508146cc8cd2a4f78bf615cafca1ae1e30d9205e87adfdb3f338512c8d3a621738ef0ea661cbefd147f3e49c59642290e8883e575a7a3fd7883b6c7b55411f32212f06ce4a9746f6628e7d419de9f8082497459595d8e9a64044dce51fe1717b0524c435f638877ef49c2579fceaf1597cf8cc9ee77700cc91f3f00aa7a1eb34def2368073874b2bd5609057ef5de029ba25027cd01b825bc8ffdd077c30f13abd3260e3de18a543b9245232bbb61d457459ddc125cf61bae4cd169115fb6e226df78afa2ead52d08e50d50137a7ad71d24e79b2690e93343b211864c7f195a2023cb974f14287906bea87485ca000102906747d55ec0ab0e15920a934bf164e6c1fb59bcbaaf89ceb5bfb315105eafda828a9eb05e97933562da6f397d79f797ffaf1e4cba03665577d8113c9778b89d1c90f9be56201765a402af972f5700ba197f47599e67554105538af142571d85996472ec4401a0f648cf0f8d77ac73bf563e9a65258c5d423436e951d002bf39af8de5d768118e657b12b6085f344ae044dbe7cfb406f3e04913a02e21ae47824c0e5df1595e0b1a232b29ea7ceba3d649ee514d47f8c62cce8ddd962a311526c311b6ec69c32b7b97b8cfd17c91da1d57db5f0cabcf0d2b31da0f7241a651a92ce9b11b7b6def451559c430ca3f321f363d5cf94e2970eb55e0ff31be36a740d7ea0eca27ead8f7e7c3d9ccd6e1133c7987512d500da9fe82726885019ca92f7e2c1a6f1b7ff51fc6005e968f626a8a51de051af4b3a2ae4612081f36424977c1999225676e0285cf475d19797d9c94067a37a325fa4221f83c97ae470b456088190b912955ead35e53178ac0ffd865c88d037921d5db7c4586091624fde26e87ab7e1584c158e915fa0c3fd691b9fd5a1f7031d059d06aa7409bad38a6e56753742170ce984abea16a5ece4324ecec159903f99952e2229997bd55c1275fb7ed93b6d8cd26bc27159ae3595183d129217833972e6300d80bc025953bf08bb39772591498b372c075921912a5c6fdb82960056bddf1965fd383ac1cc23eafda0bb609580fa3b6d2cc98d5736320f4ed2cc53db28eb7c518111316b5796a8e46636205db1df03283c0088cf0e5d39c3ad7929bb7ed0d74fc496f986779427f44ccc82c173e69e4ab90f9662f91a695a58a6b73fb769ede1e3524a2f13245b3e0dcefa24d81f5fec23aed085dc3df84c05c85565d74613d1917f4b9086c11886278b68434d9078d225edd2e15e2a680d22a4ae504ec39a944b40758ad1c037d06480c47e1c7471449b87dbd4255b30fe529e97ef98b8ca280430c2b083e5f25be9eba272d6ed007e8c6b1e713d7a442061cad6ce85a1f8a7b82eefa9055e77f268dff21ecbf58483b552b919c3b3c2c85b4ffff3c23dde8a52906e14759f0d3000267d64b6a244f61575bea1f1ffde6e39dc07e8248b0042d1cacb1d2977b8f8c2ad8c1e8edfe1c5adbc216810f03baf1437d12a93ba7644380baf7adab5fca15efeb0e897ff7f3cb877751982668189d64f75db5ce62deab73333c9836f5932c5aac62e956e856b4ad8f749d986fb93dfaf2ec7d1ef21fcfaecf028efd886b7272f0721ef1a5156e0a131b0611916347905459599e6e9dcc9454fd24ccd19c96b7d53d919dfa95b441e8666b382b2486c63cd2c6c6f7916a0236a8cf40596cff3a86e2bce7830dca164154541e94f10f3e5dbfb2d6223af9e11fac3d395a0b11b3c453be594d09b98e17656c3a463ab93269cc5484ecb2984549a78556d866a69c88f2affbc76a2c852d3f92c0cb405133ac11bc9909e8710e11a6b5adc1d8d2a2a807a606c1ed2548556c92e24b785d14aadf7e9380ed168721cc023398af3645714727681cc4af58a8ea8f011592be28e16e01c1721ecd4cbc7cc6cf41583fc072563d438ac2f07d872db5802fc2174b5724623b234f27cb8172a673da67153c878aadf76c69f46ecc0de69419a183a5f5fd36fa6a1313cd408850552926bcec410234af7411726b50a6c9a855adddbdd2b0297b7f77cf341a500c54054730146f30ab9a36894883357634265c961e2c3933b449b7658cd129a0977c7e1bc1ce594884df0cb1fae9cd0d77d4c9838b1712749197a8a556cc6031ebb57494b70019a77c4ae667c43b1a7a5b70363b6fba82349dfa8b849f1d3db3786f3db2265ba8981cfb6a021190797a7e546c9c23db068ca98aa17ef1574bc75ff4ff53e0465fa48eb983ff74721a15ce804988ee506089789541bef493cebc1b3e21a6af7ff8ef0a28ae8999bf2b719c4793dd9f5621bf12d59efb96a22b75be69dc999186136ab788bb841564747f192be9ef0914f3fc739a2f50701c1952025dbe41ea9b780ce29f030e6c92ed7b5b77d3cafa51e5e646f4567eda867f5c50c96d87da6d4a9d0790d004b35b005c75fe90d71ea32228dca7fae4af82a28e52279a584f825f3c1a3e8628e33bd3af207a985cdbf860a0d621bfb9bb9b22e9e383b516317583d3e2b2d8f82b412a4dd56359c04881cb184b7e726e75c19f84ac2314d3453d15d5faa08ae8d0b093cbb02805058da1cdcc13bb4ac5635cfc864db3cd9496cbf8621ac5013f87ddd453a203b90310c9a3c063dc3bb7376de1070fee50b2a3466bcea08476fc74789b443965354bb29b66bf7ae67898225a43389b8bac73ead5d29ac6e9ffa728949a6b0fc8d3c1431f5ce2c6887127149fd48c985d541614a4bd9d8264794fa263fd4d451aeefb47da51c00c3507c919b8dec31820ac1e671393e9fc0b531c08fb7ce458b39dcf3f4e3cc9d3e6bc8591f8f6ab542ab49de42d5d5a907201fc24a0209b36f5cf9600768bf73d47f20a9517a7d571c6a7b333ac826334beb33b8f65</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <summary type="html">有东西被加密了, 请输入密码查看.</summary>
+    
+    
+    
+    
+    <category term="备忘" scheme="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/"/>
+    
+    <category term="艾克森" scheme="http://hs.dury.cn/tags/%E8%89%BE%E5%85%8B%E6%A3%AE/"/>
+    
+    <category term="IP" scheme="http://hs.dury.cn/tags/IP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置文件</title>
+    <link href="http://hs.dury.cn/2023/04/25/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <id>http://hs.dury.cn/2023/04/25/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</id>
+    <published>2023-04-25T01:03:30.000Z</published>
+    <updated>2023-05-05T07:17:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p>Nginx 配置文件 使用前都需确认配置中的IP 和端口是否正确<br><a href="http://docker.dury.cn:9000/dury/conf/dokuwiki.conf">dokuwiki.conf</a> 8010端口 默认开启ssl 一个无数据库的wiki 之前做知识平台。<br><a href="http://docker.dury.cn:9000/dury/conf/Bitwarder.conf">Bitwarder.conf</a> Bitwarder密码管理软件必须要有ssl客户端才能正常链接 32.2:5003端口转发到8003+ssl<br><a href="http://docker.dury.cn:9000/dury/conf/Wiz.conf">Wiz.conf</a> 为知笔记 内存消耗大户 32.3:5002端口转发到8002+ssl<br><a href="http://docker.dury.cn:9000/dury/conf/Transmission.conf">Transmission.conf</a> Transmission BT客户端 31.3:9091端口转发8004+ssl<br><a href="http://docker.dury.cn:9000/dury/conf/Teakki.conf">Teakki.conf</a> Teakki 团队文档实时协作工具 31.3:5006端口转发到8006+ssl<br><a href="http://docker.dury.cn:9000/dury/conf/CalibreWEB.conf">CalibreWEB.conf</a> 线上图书馆 31.3:5012 转发到8012+ssl<br><a href="http://docker.dury.cn:9000/dury/conf/Minimalist-WEB-NotePad.conf">Minimalist-WEB-NotePad.conf</a> 一个在线记事本 8010端口 \notes 二级目录<br><a href="http://docker.dury.cn:9000/dury/conf/Hexo.conf">Hexo.conf</a> Hexo博客 443</p><h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><p><a href="http://docker.dury.cn:9000/dury/conf/nginx.docker.yaml">nginx.docker.yaml</a> 容器名web 提供端口转发和web服务<br><a href="http://docker.dury.cn:9000/dury/conf/PHP.docker.yaml">PHP.docker.yaml</a> 容器名 PHP 提供PHP支持<br><a href="http://docker.dury.cn:9000/dury/conf/DDNS.docker.yml">DDNS.docker.yml</a> 阿里云 DDNS 服务<br><a href="http://docker.dury.cn:9000/dury/conf/DNSmasq.docker.yml">DNSmasq.docker.yml</a> DNS 服务<br><a href="http://docker.dury.cn:9000/dury/conf/Wiz.docker.yml">Wiz.docker.yml</a> 为知笔记<br><a href="http://docker.dury.cn:9000/dury/conf/bitwardenrs.docker.yml">bitwardenrs.docker.yml</a> 密码管理软件<br><a href="http://docker.dury.cn:9000/dury/conf/transmission.docker.yml">transmission.docker.yml</a> PT 下载<br><a href="http://docker.dury.cn:9000/dury/conf/teakki.docker.yml">teakki.docker.yml</a> Teakki 团队文档实时协作工具<br><a href="http://docker.dury.cn:9000/dury/conf/gogs.docker.yml">gogs.docker.yml</a> git在线管理平台<br><a href="http://docker.dury.cn:9000/dury/conf/baidunetdisk.docker.yml">baidunetdisk.docker.yml</a> 百度盘客户端<br><a href="http://docker.dury.cn:9000/dury/conf/Plex.docker.yml">Plex.docker.yml</a> Plex 影音解决方案<br><a href="http://docker.dury.cn:9000/dury/conf/calibre.docker.yml">calibre.docker.yml</a> 在线图书馆</p><h1 id="WireGuard"><a href="#WireGuard" class="headerlink" title="WireGuard"></a>WireGuard</h1><p><a href="http://docker.dury.cn:9000/dury/conf/HS.wg0.conf">HS.wg0.conf</a> HS 上的配置<br><a href="http://docker.dury.cn:9000/dury/conf/docker.wg0.conf">docker.wg0.conf</a> 11.30上的配置<br><a href="http://docker.dury.cn:9000/dury/conf/CTYun.wg0.conf">CTYun.wg0.conf</a> 天翼云上的配置<br><a href="http://docker.dury.cn:9000/dury/conf/DS918.wg0.conf">DS918.wg0.conf</a> nas上的配置</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Nginx&quot;&gt;&lt;a href=&quot;#Nginx&quot; class=&quot;headerlink&quot; title=&quot;Nginx&quot;&gt;&lt;/a&gt;Nginx&lt;/h1&gt;&lt;p&gt;Nginx 配置文件 使用前都需确认配置中的IP 和端口是否正确&lt;br&gt;&lt;a href=&quot;http://docker</summary>
+      
+    
+    
+    
+    
+    <category term="备忘" scheme="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/"/>
+    
+    <category term="配置文件" scheme="http://hs.dury.cn/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WireGuard VPN</title>
+    <link href="http://hs.dury.cn/2023/04/24/WireGuard-VPN/"/>
+    <id>http://hs.dury.cn/2023/04/24/WireGuard-VPN/</id>
+    <published>2023-04-24T08:26:26.000Z</published>
+    <updated>2023-04-24T23:56:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>通用密码 ：j6ELmhHIU5YlcUBQPgKuFljaPV8Xmkz1gFgRWXt05tk&#x3D;</p><h1 id="接入点"><a href="#接入点" class="headerlink" title="接入点"></a>接入点</h1><h2 id="HS"><a href="#HS" class="headerlink" title="HS"></a>HS</h2><p>address: “192.168.7.1”<br>privateKey: “mEyi2&#x2F;T3Q82CTi1cE7bnRSpbaK4ESFXBgUfwVBvprF4&#x3D;”<br>publicKey: “Xyq55y+9i7fJRj9rhY+IaXwEmAOHNwIzdYcTmY6fXTc&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.0&#x2F;24, 192.168.31.0&#x2F;24<br>Endpoint &#x3D; dury.myqnapcloud.cn:51800</p><h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><p>address: “192.168.7.2”<br>privateKey: “APMBnbqh+FCZryxksbgRa4EFtT&#x2F;WCQloZr8CNKf5gEE&#x3D;”<br>publicKey: “eNqQIRF&#x2F;lIWXOX9SFdejHq17zUg1e&#x2F;Jkm0LVH4yulXc&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.0&#x2F;24, 192.168.11.0&#x2F;24<br>Endpoint &#x3D; docker.dury.cn:51800</p><blockquote><p>应为备案原因 dockers.dury.cn 停止外网解析 只能通过docker链接到别的网络</p></blockquote><h2 id="CTYun"><a href="#CTYun" class="headerlink" title="CTYun"></a>CTYun</h2><p>address: “192.168.7.3”<br>privateKey: “uLhhZbzXl4v4MBt&#x2F;v9pQnYcuodsKzB8C9kyBHf5ARVs&#x3D;”<br>publicKey: “OWlos2V8Z0Oy&#x2F;unNloEVwHC2Ltl1ZND&#x2F;JOzk4kLiqHs&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.3&#x2F;24<br>Endpoint &#x3D; ctyun.dury.cn:51820</p><h2 id="DS918"><a href="#DS918" class="headerlink" title="DS918"></a>DS918</h2><p>address: “192.168.7.4”<br>privateKey: “yITKxTKMtVTkKtr1SAPkLyB0HE8eZOX3SranmyYGwlw&#x3D;”<br>publicKey: “DUxmJhcxB3Gx4+FjkjxKFDftlJY+kWu14EchkzfG9T4&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.0&#x2F;24, 192.168.11.0&#x2F;24</p><h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><h2 id="work"><a href="#work" class="headerlink" title="work"></a>work</h2><p>address: “192.168.7.11”<br>privateKey: “eIFCQKnw8+8ziTugxE4+ucviqi5bkyL2xvHFCeQyaXc&#x3D;”<br>publicKey: “se9gV+86gZOTg2BVKpvHfSPNG8B+&#x2F;JBK1tqMUjrAIH0&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.11&#x2F;32</p><h2 id="Iphone"><a href="#Iphone" class="headerlink" title="Iphone"></a>Iphone</h2><p>address: “192.168.7.12”<br>privateKey: “MClQDsax7TLfKBQPolsteWh&#x2F;qRffkgphTi9htJx5VU0&#x3D;”<br>publicKey: “SqCXZV1CgJ2Im6Mpm1+l7d46pezVM7fFg7mWr4LWjU4&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.12&#x2F;32</p><h2 id="Ipad"><a href="#Ipad" class="headerlink" title="Ipad"></a>Ipad</h2><p>address: “192.168.7.13”<br>privateKey: “MA6q7lJb+bgxJMiWi8YuJRjIMgWmM7IGQN3iRtCGlEE&#x3D;”<br>publicKey: “eIsPl74fQC7WPbsyFRnaU8JfQWSLF05W8+HTfrbhrGo&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.13&#x2F;32</p><h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>address: “192.168.7.14”<br>privateKey: “EF8ggXxSJBSGAVE+Gkfw7CLoAVX&#x2F;18hxZ2O9aC+DY2k&#x3D;”<br>publicKey: “mklfzY84P+QVhvWch6qzEaPmKRJGO7i6ISSZoPX&#x2F;S1k&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.14&#x2F;32</p><h2 id="BackupExec"><a href="#BackupExec" class="headerlink" title="BackupExec"></a>BackupExec</h2><p>address: “192.168.7.15”<br>privateKey: “KA5ZSYDjVp17dbRpZPaf&#x2F;kKdejQiOgeOu+CvnxiFwH4&#x3D;”<br>publicKey: “Dxx5v4R7SnKxbt6GrHAfnXP0NaHeMGCksFvAuej5dzc&#x3D;”<br>AllowedIPs &#x3D; 192.168.7.15&#x2F;32</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;通用密码 ：j6ELmhHIU5YlcUBQPgKuFljaPV8Xmkz1gFgRWXt05tk&amp;#x3D;&lt;/p&gt;
+&lt;h1 id=&quot;接入点&quot;&gt;&lt;a href=&quot;#接入点&quot; class=&quot;headerlink&quot; title=&quot;接入点&quot;&gt;&lt;/a&gt;接入点&lt;/h1&gt;&lt;h2 id</summary>
+      
+    
+    
+    
+    
+    <category term="WG 配置" scheme="http://hs.dury.cn/tags/WG-%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OWSS</title>
+    <link href="http://hs.dury.cn/2023/04/24/OWSS/"/>
+    <id>http://hs.dury.cn/2023/04/24/OWSS/</id>
+    <published>2023-04-24T08:26:12.000Z</published>
+    <updated>2023-04-24T08:41:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Open Web Simple Storage（OWSS），一个基于 nodejs 简单的 Web 存储微服务，可用于私人配置文件集中存储。<br>备份PT-Plugin-Plus 数据的时候用的。<br>docker pull ronggang&#x2F;owss<br>docker run -d -v &#x2F;OWSS&#x2F;storage:&#x2F;app&#x2F;storage -v &#x2F;OWSS&#x2F;config:&#x2F;app&#x2F;config -p 8088:8088 ronggang&#x2F;owss</p><p>参考 ：<br><a href="https://github.com/ronggang/OWSS">https://github.com/ronggang/OWSS</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Open Web Simple Storage（OWSS），一个基于 nodejs 简单的 Web 存储微服务，可用于私人配置文件集中存储。&lt;br&gt;备份PT-Plugin-Plus 数据的时候用的。&lt;br&gt;docker pull ronggang&amp;#x2F;owss&lt;br&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="服务" scheme="http://hs.dury.cn/tags/%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="docker" scheme="http://hs.dury.cn/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务</title>
+    <link href="http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1/</id>
+    <published>2023-04-24T08:25:49.000Z</published>
+    <updated>2023-04-26T05:01:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>HS 容器管理 <a href="https://hs.dury.cn:9443/">https://hs.dury.cn:9443</a> </p><p>Nas ssh:nas.dury.cn:22<br>Nas Qvpn:nas.dury.cn:8005<br>HS ssh:hs.dury.cn:22 </p><p>*为止笔记： <a href="https://hs.dury.cn8002/">https://hs.dury.cn8002</a><br>Nas Bitwarden <a href="https://nas.dury.cn:8003/">https://nas.dury.cn:8003</a><br>Hs torrents <a href="https://hs.dury.cn:8004/">https://hs.dury.cn:8004</a><br>*HS teakki <a href="https://hs.dury.cn:8006/">https://hs.dury.cn:8006</a><br>*HS GOGS WEB UI <a href="https://hs.dury.cn:8007/">https://hs.dury.cn:8007</a><br>*HS GOGS ssh <a href="https://hs.dury.cn:8008/">https://hs.dury.cn:8008</a><br>*HS BaiduNetDisk <a href="https://hs.dury.cn:8009/">https://hs.dury.cn:8009</a><br>Nas DokuWiki <a href="https://nas.dury.cn:8010/">https://nas.dury.cn:8010</a><br>*HS calibre  <a href="https://hs.dury.cn:8012/">https://hs.dury.cn:8012</a><br>临时网盘 <a href="http://dury.ysepan.com/">http://dury.ysepan.com/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;HS 容器管理 &lt;a href=&quot;https://hs.dury.cn:9443/&quot;&gt;https://hs.dury.cn:9443&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Nas ssh:nas.dury.cn:22&lt;br&gt;Nas Qvpn:nas.dury.cn:8005&lt;br&gt;HS </summary>
+      
+    
+    
+    
+    <category term="备忘" scheme="http://hs.dury.cn/categories/%E5%A4%87%E5%BF%98/"/>
+    
+    
+    <category term="服务" scheme="http://hs.dury.cn/tags/%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="备忘" scheme="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CoreDNS搭建</title>
+    <link href="http://hs.dury.cn/2023/04/24/CoreDNS%E6%90%AD%E5%BB%BA/"/>
+    <id>http://hs.dury.cn/2023/04/24/CoreDNS%E6%90%AD%E5%BB%BA/</id>
+    <published>2023-04-24T07:41:38.000Z</published>
+    <updated>2023-04-24T08:00:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="直接下载二进制版本，内置默认插件"><a href="#直接下载二进制版本，内置默认插件" class="headerlink" title="直接下载二进制版本，内置默认插件"></a>直接下载二进制版本，内置默认插件</h2><p>coredns在<a href="https://github.com/coredns/coredns/releases">github</a>上面提供了各种版本的预编译包，我们只需要下载对应的硬件版本即可。</p><h2 id="自己编译并内置自己的插件"><a href="#自己编译并内置自己的插件" class="headerlink" title="自己编译并内置自己的插件"></a>自己编译并内置自己的插件</h2><p>‘’git clone <a href="https://github.com/coredns/coredns.git">https://github.com/coredns/coredns.git</a>‘’.<br>‘’cd coredns’’<br>修改plugin.cfg文件添加自己的插件。<br>‘’make’’<br>‘’go generate’’<br>‘’go build’’ </p><h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><p>复制安装文件到 &#x2F;usr&#x2F;local&#x2F;bin 或者 &#x2F;usr&#x2F;bin<br>安装resolvconf工具 ‘’sudo apt install resolvconf’’<br>在’’&#x2F;etc&#x2F;NetworkManager&#x2F;NetworkManager.conf’’ 中加一行 ‘’dns&#x3D;default’’</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[main]</span></span><br><span class="line"><span class="attr">plugins</span>=ifupdown,keyfile</span><br><span class="line"><span class="attr">dns</span>=default</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="section">[ifupdown]</span></span><br><span class="line"><span class="attr">managed</span>=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="section">[device]</span></span><br><span class="line"><span class="attr">wifi.scan-rand-mac-address</span>=<span class="literal">no</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Add nameserver 127.0.0.1 to &#x2F;etc&#x2F;resolvconf&#x2F;resolv.conf.d&#x2F;head<br>Create &#x2F;etc&#x2F;coredns&#x2F;Corefile and paste the configuration shown below. In this example, we are using CloudFlare as a DNS provider. You can use Google or Quad9 as well, just change the IPs.  </p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/coredns/Corefile</span></span><br><span class="line"></span><br><span class="line">.:53 &#123;</span><br><span class="line">    forward . tls://2606:4700:4700::1111 tls://1.1.1.1</span><br><span class="line">    log</span><br><span class="line">    errors</span><br><span class="line">    cache</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Create a new user for CoreDNS: sudo useradd -d &#x2F;var&#x2F;lib&#x2F;coredns -m coredns<br>Set some permissions: sudo chown coredns:coredns &#x2F;opt&#x2F;coredns<br>没有发现那里用到上面这个目录，不过在给权限前要新建这个目录。<br>Download the SystemD service unit file from <a href="https://github.com/coredns/deployment/tree/master/systemd">coredns&#x2F;coredns</a> to &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;coredns.service</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=CoreDNS DNS server</span><br><span class="line"><span class="attr">Documentation</span>=https://coredns.io</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">PermissionsStartOnly</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">LimitNOFILE</span>=<span class="number">1048576</span></span><br><span class="line"><span class="attr">LimitNPROC</span>=<span class="number">512</span></span><br><span class="line"><span class="attr">CapabilityBoundingSet</span>=CAP_NET_BIND_SERVICE</span><br><span class="line"><span class="attr">AmbientCapabilities</span>=CAP_NET_BIND_SERVICE</span><br><span class="line"><span class="attr">NoNewPrivileges</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">User</span>=coredns</span><br><span class="line"><span class="attr">WorkingDirectory</span>=~</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/local/bin/coredns -conf=/etc/coredns/Corefile</span><br><span class="line"><span class="attr">ExecReload</span>=/bin/kill -SIGUSR1 <span class="variable">$MAINPID</span></span><br><span class="line"><span class="attr">Restart</span>=<span class="literal">on</span>-failure</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure><p>Disable SystemD’s default DNS server: sudo systemctl stop systemd-resolved &amp;&amp; sudo systemctl disable systemd-resolved<br>Please Note: From that moment on, you will not be able to resolve any web pages anymore, unless you enable DNS again<br>Enable and start CoreDNS: sudo systemctl enable coredns &amp;&amp; sudo systemctl start coredns<br>You should be able to resolve domain names, again. E.g. try dig +short kit.edu. If an IP address is printed, everything works fine.  </p><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/etc/coredns/Corefile </span></span><br><span class="line"></span><br><span class="line">.:53 &#123;</span><br><span class="line">  <span class="comment"># 开启wgsd 并且绑定端口WG0域名dury.cn</span></span><br><span class="line">  wgsd dury.cn. wg0</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 绑定interface ip</span></span><br><span class="line">  bind 0.0.0.0</span><br><span class="line">  <span class="comment"># 先走本机的hosts</span></span><br><span class="line">  <span class="comment"># https://coredns.io/plugins/hosts/</span></span><br><span class="line">  hosts &#123;</span><br><span class="line">    <span class="comment"># 自定义sms.service search.service 的解析</span></span><br><span class="line">    <span class="comment"># 因为解析的域名少我们这里直接用hosts插件即可完成需求</span></span><br><span class="line">    <span class="comment"># 如果有大量自定义域名解析那么建议用file插件使用 符合RFC 1035规范的DNS解析配置文件</span></span><br><span class="line">    192.168.31.1 operwrt</span><br><span class="line">    192.168.31.1 operwrt.dury.cn</span><br><span class="line">    192.168.31.2 nas</span><br><span class="line">    192.168.31.2 nas.dury.cn</span><br><span class="line">    192.168.31.3 hs</span><br><span class="line">    192.168.31.3 hs.dury.cn</span><br><span class="line">    192.168.7.1 hs.dury.cn</span><br><span class="line">    192.168.31.4 print</span><br><span class="line">    192.168.31.4 print.dury.cn</span><br><span class="line">    192.168.11.20 work</span><br><span class="line">    192.168.11.20 work.dury.cn</span><br><span class="line">    192.168.7.2 docker.dury.cn</span><br><span class="line">    192.168.11.30 docker.dury.cn</span><br><span class="line">    192.168.11.30 docker</span><br><span class="line">    192.168.7.3 ctyun</span><br><span class="line">    192.168.7.3 ctyun.dury.cn</span><br><span class="line">    192.168.7.4 ds918</span><br><span class="line">    192.168.11.82 ds918</span><br><span class="line">    192.168.11.82 ds918.dury.cn</span><br><span class="line">    192.168.7.3 dns.dury.cn</span><br><span class="line">    192.168.11.10 exsi.dury.cn</span><br><span class="line">    <span class="comment"># ttl</span></span><br><span class="line">    ttl 60</span><br><span class="line">    <span class="comment"># 重载hosts配置</span></span><br><span class="line">    reload 1m</span><br><span class="line">    <span class="comment"># 继续执行</span></span><br><span class="line">    fallthrough</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment"># file enables serving zone data from an RFC 1035-style master file.</span></span><br><span class="line">  <span class="comment"># https://coredns.io/plugins/file/</span></span><br><span class="line">  <span class="comment"># file service.signed service</span></span><br><span class="line">  <span class="comment"># 最后所有的都转发到Cloudflare的tls加密DNS上</span></span><br><span class="line">  forward . tls://2606:4700:4700::1111 tls://1.1.1.1</span><br><span class="line">  <span class="comment"># 缓存时间ttl</span></span><br><span class="line">  cache 120</span><br><span class="line">  <span class="comment"># 自动加载配置文件的间隔时间</span></span><br><span class="line">  reload 6s</span><br><span class="line">  <span class="comment"># 输出日志</span></span><br><span class="line">  log</span><br><span class="line">  <span class="comment"># 输出错误</span></span><br><span class="line">  errors</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/387806561">CoreDNS篇1-CoreDNS简介和安装</a><br><a href="https://devpress.csdn.net/linux/62eeccb2c6770329307f418b.html">如何使用 CoreDNS 在 Ubuntu 上启用 DNS-over-TLS</a>  翻译下面这篇博客的<br><a href="https://muetsch.io/how-to-enable-dns-over-tls-on-ubuntu-using-coredns.html">How to enable DNS-over-TLS on Ubuntu using CoreDNS</a><br><a href="https://icloudnative.io/posts/wireguard-endpoint-discovery-nat-traversal/">WireGuard 教程：使用 DNS-SD 进行 NAT-to-NAT 穿透</a><br><a href="https://www.iamle.com/archives/2679.html">使用CoreDNS作为你的内网DNS服务器</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;直接下载二进制版本，内置默认插件&quot;&gt;&lt;a href=&quot;#直接下载二进制版本，内置默认插件&quot; class=&quot;headerlink&quot; title=&quot;直接下载二进制版本，内置默认插件&quot;&gt;&lt;/a&gt;直接下载二进制版本，内置默认插件&lt;/h2&gt;&lt;p&gt;coredns在&lt;a hre</summary>
+      
+    
+    
+    
+    
+    <category term="DNS" scheme="http://hs.dury.cn/tags/DNS/"/>
+    
+    <category term="CoreDNS" scheme="http://hs.dury.cn/tags/CoreDNS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu_12.04_关闭自带的dns服务</title>
+    <link href="http://hs.dury.cn/2023/04/24/ubuntu-12-04-%E5%85%B3%E9%97%AD%E8%87%AA%E5%B8%A6%E7%9A%84dns%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://hs.dury.cn/2023/04/24/ubuntu-12-04-%E5%85%B3%E9%97%AD%E8%87%AA%E5%B8%A6%E7%9A%84dns%E6%9C%8D%E5%8A%A1/</id>
+    <published>2023-04-24T07:39:43.000Z</published>
+    <updated>2023-04-24T07:41:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>关掉systemd-resolved的步骤<br>‘’sudo systemctl disable systemd-resolved’’<br>‘’sudo systemctl stop systemd-resolved’’ </p><p>参考：<a href="https://www.netroby.com/view/4076">优化ubuntu dns解析，关掉systemd-resolved</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;关掉systemd-resolved的步骤&lt;br&gt;‘’sudo systemctl disable systemd-resolved’’&lt;br&gt;‘’sudo systemctl stop systemd-resolved’’ &lt;/p&gt;
+&lt;p&gt;参考：&lt;a href=&quot;http</summary>
+      
+    
+    
+    
+    
+    <category term="运维" scheme="http://hs.dury.cn/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>清理var_log_journal</title>
+    <link href="http://hs.dury.cn/2023/04/24/%E6%B8%85%E7%90%86var-log-journal/"/>
+    <id>http://hs.dury.cn/2023/04/24/%E6%B8%85%E7%90%86var-log-journal/</id>
+    <published>2023-04-24T07:25:53.000Z</published>
+    <updated>2023-04-24T07:29:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>操作ctyun的时候发现&#x2F;var&#x2F;log&#x2F;jouranl 文件夹占用3G左右空间需要清理。 </p><p>‘’sudo su ‘’<br>‘’journalctl –vacuum-time&#x3D;1w’’</p><p>参考：<a href="https://www.jianshu.com/p/a30648913fe0">清空 &#x2F;var&#x2F;log&#x2F;journal 文件的方法</a> </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;操作ctyun的时候发现&amp;#x2F;var&amp;#x2F;log&amp;#x2F;jouranl 文件夹占用3G左右空间需要清理。 &lt;/p&gt;
+&lt;p&gt;‘’sudo su ‘’&lt;br&gt;‘’journalctl –vacuum-time&amp;#x3D;1w’’&lt;/p&gt;
+&lt;p&gt;参考：&lt;a hre</summary>
+      
+    
+    
+    
+    
+    <category term="运维" scheme="http://hs.dury.cn/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go环境搭建</title>
+    <link href="http://hs.dury.cn/2023/04/24/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://hs.dury.cn/2023/04/24/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</id>
+    <published>2023-04-24T07:19:44.000Z</published>
+    <updated>2023-04-24T07:25:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>应为CronDNS要用到Go编译所以有个这个搭建</p><ol><li><p>浏览最新的发行版：<a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/</a></p></li><li><p>解压缩：sudo tar -xzf go1.19.4.linux-amd64.tar.gz -C &#x2F;usr&#x2F;local</p></li><li><p>配置环境：<br> 配置为当前用户：修改vi ~&#x2F;.profile<br> 配置为主机：修改sudo vi &#x2F;etc&#x2F;profile<br> export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin</p></li><li><p>使配置生效：source &#x2F;etc&#x2F;profile</p></li><li><p>验证： go version</p></li><li><p>代理：export GOPROXY&#x3D;<a href="https://mirrors.aliyun.com/goproxy/">https://mirrors.aliyun.com/goproxy/</a></p></li></ol><p>参考： <a href="https://blog.csdn.net/liangcsdn111/article/details/115405223">ubuntu 安装go</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;应为CronDNS要用到Go编译所以有个这个搭建&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;浏览最新的发行版：&lt;a href=&quot;https://golang.google.cn/dl/&quot;&gt;https://golang.google.cn/dl/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="服务" scheme="http://hs.dury.cn/tags/%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="运维" scheme="http://hs.dury.cn/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="go" scheme="http://hs.dury.cn/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wireguard安装</title>
+    <link href="http://hs.dury.cn/2023/04/24/wireguard%E5%AE%89%E8%A3%85/"/>
+    <id>http://hs.dury.cn/2023/04/24/wireguard%E5%AE%89%E8%A3%85/</id>
+    <published>2023-04-24T07:13:23.000Z</published>
+    <updated>2023-04-24T07:21:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>sudo apt install wireguard</p><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>开启地址转发：<br>$ echo “net.ipv4.ip_forward &#x3D; 1” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf<br>$ echo “net.ipv4.conf.all.proxy_arp &#x3D; 1” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf<br>$ sysctl -p &#x2F;etc&#x2F;sysctl.conf </p><p>配置防火墙：<br>iptables -A INPUT -m conntrack –ctstate RELATED,ESTABLISHED -j ACCEPT<br>iptables -A FORWARD -m conntrack –ctstate RELATED,ESTABLISHED -j ACCEPT<br>iptables -A FORWARD -i wg0 -o wg0 -m conntrack –ctstate NEW -j ACCEPT<br>iptables -t nat -A POSTROUTING -s 192.168.11.0&#x2F;24 -o ens160 -j MASQUERADE </p><h1 id="一些简单的操作"><a href="#一些简单的操作" class="headerlink" title="一些简单的操作"></a>一些简单的操作</h1><p>ip link add dev wg0 type wireguard #建立wg0 VPN端口<br>ip addr add 192.168.7.2&#x2F;24 dev wg0 #设置WG0 的IP地址<br>wg-quick up wg0 #启动wg0 VPN<br>wg-quick down wg0 #关闭 WG0</p><h1 id="开机自动启动"><a href="#开机自动启动" class="headerlink" title="开机自动启动"></a>开机自动启动</h1><p>systemctl enable wg-quick@wg0 –now</p><hr><p>引用：</p><p><a href="https://www.wireguard.com/install">https://www.wireguard.com/install</a><br><a href="https://www.wireguard.com/quickstart/">https://www.wireguard.com/quickstart/</a><br><a href="https://icloudnative.io/posts/wireguard-docs-practice/">https://icloudnative.io/posts/wireguard-docs-practice/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;sudo apt install wireguard&lt;/p&gt;
+&lt;h1 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;header</summary>
+      
+    
+    
+    
+    
+    <category term="服务" scheme="http://hs.dury.cn/tags/%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="运维" scheme="http://hs.dury.cn/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="wireguard" scheme="http://hs.dury.cn/tags/wireguard/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>部分(已知所有)客户端无法创建中间层组件，之前建立了链接的能正常使用。</title>
+    <link href="http://hs.dury.cn/2023/04/24/%E9%83%A8%E5%88%86-%E5%B7%B2%E7%9F%A5%E6%89%80%E6%9C%89-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6%EF%BC%8C%E4%B9%8B%E5%89%8D%E5%BB%BA%E7%AB%8B%E4%BA%86%E9%93%BE%E6%8E%A5%E7%9A%84%E8%83%BD%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E3%80%82/"/>
+    <id>http://hs.dury.cn/2023/04/24/%E9%83%A8%E5%88%86-%E5%B7%B2%E7%9F%A5%E6%89%80%E6%9C%89-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6%EF%BC%8C%E4%B9%8B%E5%89%8D%E5%BB%BA%E7%AB%8B%E4%BA%86%E9%93%BE%E6%8E%A5%E7%9A%84%E8%83%BD%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E3%80%82/</id>
+    <published>2023-04-24T02:16:20.000Z</published>
+    <updated>2023-04-26T08:28:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="1442186ac9f2e8f1d966d9301ade9deaa133389e513768dc27b2b3a53b1bc61c">d737225af53dad527f40cb9c512e029624439fdf89d2678c2df42d3cb907e5a73e6ef8e7b36615666090d5fbe52cbd7f2ad0d75da0c561cdd03b56069d2328b97daea6fdc19f948bf1f121c21cc9e6f96f2a6afffb1281a44076aa42f95889764e07ba7e67cbc0f703e41af09a214e4d888a4d3f179c3cf125c3462afd0ef3be1c538641d5d313d2f72feb4b1135d8ddb7f137a9e7786b5cebe7bec15f048cb53ee888d84ee5a5ecca4826870d01394c3e6b885e570803b030431f5a1e4be59a731babb5f907348bce6fc65cf87e7407ea21f757e5e8f70f28f23a6dc58712717775c70d86fc9c86c0568491ea229c36074cbfd68dd9b0d1d7f204eab983e75257ef80eb3c178d933796dc800c42882fe6fb9d5eb2497550995b6a7c8056caa588a8b296c7f509fe42ff9fa8633106a85833c24b93f751c8f14519304fdbfd3c793dac9942ec3053a2159d1c5a98b6d75f480e4f59b4652c608196d25aa4a7d1401f6c637f3ffaeddd84c7d2f2b93c12d6dda6236bc8e6d604f67325d54fceddbbf9dac52be3d4cdad6e1ee0920ffc9bbbd18c1ad1b72792f4ac47e6be73eb285bf4eff8ea509233ae0b4369dfef90796024e8408c408d00c04f94d7518e97f4269320d2a78012f7e794572f66d172198c170e05795a47f140798e60474942aa26eb36c9a412f6b4f0c21f161adf821913d04f0b4244b99fb4cd3274d2430bbd283f0cff84c8d4026374f1fb1055836b9f28f420f17c752cf1f573094a6dd1c057ef25d37ed798559e2c046976132580ea72f7313adfe9ddc7a497e4021c69b81982a8e2e7e0ac2575faa766891d30d05fbb185d0febf2771ee98e79319071e299f109f3da090b93d54bc82585ccbffabd19cc9d1221accbfa439e93d37ff096faaae5e04c4aacc0c39bd747347f55b2faa728af9240c046d88deec4c43f52d6e33cf2f3d6bcbfde9a66ebf61e24be5ddf97db9451ed741d20c2e857a0d9a331cceb99824b654c4f170373ef9c3983ab1132f7a062997f18ce37cdc0822e2e000a18b9db1b0d593ccf26b4db4f1b5ab9831691b1c082ca5b62c1b1f19f15ca170e562c1384a4de3eb994c5b19048a1a579c95aa06d07b3731f3fdb6e2a8d7c74b3fcc68580c2c9193402827acfb85365e83458e5c7c85525c7ddb7a8bfb23ca1e3ceb8fd3b178a1b5985e0a42358675b17ecd827c14aa3390494d820638f1347d098fd1d0d95984e874797e118d2be79c0f60632e78279fa3712c719b80d2ba1455501d4794058bd2977832256f32839505504b3dba2df1d0d6f85b81f503323a4308dc7ba591c60634d225bf6224d6af8d7a031fb0a1300cda06773dcb807c3b7f4ff79638073ccfe5cbb40423457eeae38e80686d9c1109664735c709183e8b2d7df48c0ccd4c386cd8937e33c17d3229dfb7ad6b6ddc41da3901446a1b760d8bd2a729cbd9e8c70f4cde7caf20dc68a82359a23059228107161e096617272054a066ebb51b0e224dc1b6b2464a61c9aad9110898045c07e1cedeef53124bf6c66a493a161cc4ded29042aac57f1f4af23c5c7b2494e87d416257d4cea038dc6dad5715bb1ceb53684ef1f88b77a1925f6c58ba948e06c096c3078c92a4019f53df8237fe1dcc3fa6eaf0aac706c843eb8438c1f782bdfffa184d6723b75893e9e9a1f6c65e3abcb9dbc4fb70aec469f4ff89401b41af9b77a0915c78f417d9d60ac51dde959c8f3a25743681b885f6bb3f90d2a593613a16ed5c2b2e84aaca5e527a0997cd10ee2cf915d3cfd8a9155455341ebe17880f8bca96924a408750b9642a2ab47e7ecd49d596ea1171486e40a54e6524e857fa670aa9884fdcbcd619e5cf4211d4abe4a909b285065103895153078573b382748d56642c6617b57ee663a071db435d839e94955191f58ef85cfb88d998a3fc3ed89287c755b2de5ad42ea0ea2afc3c0d689bbce8c07e2568bf15a36c6133b14adbb2e0838f5231e0c71a5441bf4783ad639f8e2eb21a6f0a2bcb67411ea30b70f68ed834198658d8ec6f15d65d3e575d7f79c0fee9e123f</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <summary type="html">有东西被加密了, 请输入密码查看.</summary>
+    
+    
+    
+    <category term="艾克森" scheme="http://hs.dury.cn/categories/%E8%89%BE%E5%85%8B%E6%A3%AE/"/>
+    
+    
+    <category term="艾克森" scheme="http://hs.dury.cn/tags/%E8%89%BE%E5%85%8B%E6%A3%AE/"/>
+    
+    <category term="erp" scheme="http://hs.dury.cn/tags/erp/"/>
+    
+    <category term="金蝶K|3" scheme="http://hs.dury.cn/tags/%E9%87%91%E8%9D%B6K-3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务器IP</title>
+    <link href="http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1%E5%99%A8IP/"/>
+    <id>http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1%E5%99%A8IP/</id>
+    <published>2023-04-24T02:13:30.000Z</published>
+    <updated>2023-04-24T02:40:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="64469b264be0f65f6e0888b8673cf9e69f18a3fd1cd4205c8d81fc7b24c82d32">d737225af53dad527f40cb9c512e0296646d1f0a9b3da7a10c72abee0484f8a8043720395f54890ee341d435f98d6b44613ab528fa2c3f8ea2572c160c50d2c399c6d7f4f619b9ab00f21121516ceaf5c767e237b049ea856b37832b8de6db0d445ea2161955df5b2660a34e0dd25e681b8b51b16eb401b7e918a58780fe466c86468923e1950712fa235e3d45300bf341864004b566fe235e6ca56dcb9d219bb47019cec45d09dc743f264b37a77ff6ddcfdc91b8ee76b7946af402af4a35e4899a353e81f5593baa6cdba30527a909b377525b858d5d148bb5d8ccd309c7793a90a3de9555b37e101cb4cd081b586f863ac480a861c130143d28a4c1fa0ece</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <summary type="html">有东西被加密了, 请输入密码查看.</summary>
+    
+    
+    
+    
+    <category term="艾克森" scheme="http://hs.dury.cn/tags/%E8%89%BE%E5%85%8B%E6%A3%AE/"/>
+    
+  </entry>
+  
+</feed>
