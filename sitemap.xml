@@ -259,6 +259,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://hs.dury.cn/tags/crypt/</loc>
+    <lastmod>2023-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>

@@ -30,5 +30,6 @@ http://hs.dury.cn/tags/%E9%87%91%E8%9D%B6K-3/
 http://hs.dury.cn/tags/IP/
 http://hs.dury.cn/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/
 http://hs.dury.cn/tags/Hero/
+http://hs.dury.cn/tags/crypt/
 http://hs.dury.cn/categories/%E5%A4%87%E5%BF%98/
 http://hs.dury.cn/categories/%E8%89%BE%E5%85%8B%E6%A3%AE/
