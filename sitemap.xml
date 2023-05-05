@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hs.dury.cn/2023/04/24/WireGuard-VPN/</loc>
+    
+    <lastmod>2023-05-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hs.dury.cn/2023/04/24/CoreDNS%E6%90%AD%E5%BB%BA/</loc>
+    
+    <lastmod>2023-05-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1/</loc>
+    
+    <lastmod>2023-05-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://hs.dury.cn/2023/04/25/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
     
     <lastmod>2023-05-05</lastmod>
@@ -65,34 +92,7 @@
   </url>
   
   <url>
-    <loc>http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1/</loc>
-    
-    <lastmod>2023-04-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://hs.dury.cn/2023/04/24/WireGuard-VPN/</loc>
-    
-    <lastmod>2023-04-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://hs.dury.cn/2023/04/24/OWSS/</loc>
-    
-    <lastmod>2023-04-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://hs.dury.cn/2023/04/24/CoreDNS%E6%90%AD%E5%BB%BA/</loc>
     
     <lastmod>2023-04-24</lastmod>
     
