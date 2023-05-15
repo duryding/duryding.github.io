@@ -1,3 +1,4 @@
+http://hs.dury.cn/2023/05/15/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/
 http://hs.dury.cn/2023/04/25/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9AIP/
 http://hs.dury.cn/2023/05/07/Home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/
 http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1/
@@ -37,5 +38,6 @@ http://hs.dury.cn/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/
 http://hs.dury.cn/tags/Hero/
 http://hs.dury.cn/tags/portainer-io/
 http://hs.dury.cn/tags/minio/
+http://hs.dury.cn/tags/%E9%87%91%E8%9D%B6K3/
 http://hs.dury.cn/categories/%E5%A4%87%E5%BF%98/
 http://hs.dury.cn/categories/%E8%89%BE%E5%85%8B%E6%A3%AE/

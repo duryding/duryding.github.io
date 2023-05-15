@@ -6,7 +6,7 @@
   <link href="http://hs.dury.cn/atom.xml" rel="self"/>
   
   <link href="http://hs.dury.cn/"/>
-  <updated>2023-05-07T04:13:37.000Z</updated>
+  <updated>2023-05-15T05:45:28.000Z</updated>
   <id>http://hs.dury.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>修改公共资料-&gt;客户-&gt;客户名称字段宽度</title>
+    <link href="http://hs.dury.cn/2023/05/15/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/"/>
+    <id>http://hs.dury.cn/2023/05/15/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/</id>
+    <published>2023-05-15T05:41:38.000Z</published>
+    <updated>2023-05-15T05:45:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>上周末接最终用户反馈，客户名称字段长度有限制有客户名字太长存不进去。联系金蝶售后说周一远程支持。在这里备注下修改方法以方便以后操作。<br>修改表t_Organization 的FName字段长度<br>修改表t_Item 的FName字段</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;上周末接最终用户反馈，客户名称字段长度有限制有客户名字太长存不进去。联系金蝶售后说周一远程支持。在这里备注下修改方法以方便以后操作。&lt;br&gt;修改表t_Organization 的FName字段长度&lt;br&gt;修改表t_Item 的FName字段&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="金蝶K3" scheme="http://hs.dury.cn/tags/%E9%87%91%E8%9D%B6K3/"/>
+    
+  </entry>
   
   <entry>
     <title>Home  端口映射</title>
