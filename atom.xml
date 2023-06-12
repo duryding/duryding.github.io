@@ -6,7 +6,7 @@
   <link href="http://hs.dury.cn/atom.xml" rel="self"/>
   
   <link href="http://hs.dury.cn/"/>
-  <updated>2023-05-15T05:45:28.000Z</updated>
+  <updated>2023-06-12T01:37:35.000Z</updated>
   <id>http://hs.dury.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录一次查找错误接入的DHCP</title>
+    <link href="http://hs.dury.cn/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/"/>
+    <id>http://hs.dury.cn/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/</id>
+    <published>2023-06-10T06:26:42.000Z</published>
+    <updated>2023-06-12T01:37:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近一段时间网络里一直有个错误的DHCP在广播错误的地址。这次准备花时间学习如何能快速定位这个设备。<br>2023-06-12<br>通过查资料有新的方法了。</p><ol><li>先配置正确的固定IP</li><li>ping DHCP 然后arp -a 拿到正确dhcp的mac</li><li>登录web查找正确dhcp的接口</li><li>配置全局 DHCP Snooping <ol><li><H3C>system-view</li><li>[H3C]dhcp snooping enable</li></ol></li><li>配置信任端口<ol><li>[H3C]interface GigabitEthernet 1&#x2F;0&#x2F;1</li><li>[H3C-GigabitEthernet1&#x2F;0&#x2F;1]dhcp snooping trust</li></ol></li><li>去所有接入交换分别找到去DHCP的接口并按照上面的命令开启 DHCP Snooping 。</li></ol><p>2023-06-10<br>思路是首先通过抓包找到该设备的MAC地址，然后通过交换机定位该设备的物理端口然后找到对应的设备。</p><p>抓包软件：(Wireshark)[<a href="https://www.wireshark.org/]">https://www.wireshark.org/]</a> 如果安装后找不到网卡再装个(npcap)[<a href="https://npcap.com/]%E3%80%82">https://npcap.com/]。</a></p><p>通过阅读文献确认所有DHCP 都会在DHCP过程中回复一个Offer包，先打开抓包软件确定网卡后断开连接重置捕获在连接网络 等几分钟停止捕获就可以了。<br>然后过滤所有的DHCP协议找到offer包查看源mac地址就找到那个设备的mac地址了。</p><p>拿到了mac地址 接下来就是去交换机上找端口了。<br>一开始按说明书上的IP没有连到设备 通过console口发现是dhcp的 手动该IP到10.232 然后相近IP找到了233 234 还差一个应该是3楼的设备</p><p>(DHCP协议详解)[<a href="https://zhuanlan.zhihu.com/p/265293856]">https://zhuanlan.zhihu.com/p/265293856]</a><br>(Wireshark分析DHCP)[<a href="https://blog.csdn.net/qq_24421591/article/details/50936469]">https://blog.csdn.net/qq_24421591/article/details/50936469]</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近一段时间网络里一直有个错误的DHCP在广播错误的地址。这次准备花时间学习如何能快速定位这个设备。&lt;br&gt;2023-06-12&lt;br&gt;通过查资料有新的方法了。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先配置正确的固定IP&lt;/li&gt;
+&lt;li&gt;ping DHCP 然后arp -a 拿到正确</summary>
+      
+    
+    
+    
+    
+    <category term="备忘" scheme="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
   
   <entry>
     <title>修改公共资料-&gt;客户-&gt;客户名称字段宽度</title>

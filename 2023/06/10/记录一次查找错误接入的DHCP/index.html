@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: WG 配置 | Dury&#39;s Cards</title>
-  <meta name="description" content="技术分享,备忘">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dury&#39;s Cards">
-<meta property="og:url" content="http://hs.dury.cn/tags/WG-%E9%85%8D%E7%BD%AE/index.html">
+  <title>记录一次查找错误接入的DHCP | Dury&#39;s Cards</title>
+  <meta name="description" content="最近一段时间网络里一直有个错误的DHCP在广播错误的地址。这次准备花时间学习如何能快速定位这个设备。2023-06-12通过查资料有新的方法了。  先配置正确的固定IP ping DHCP 然后arp -a 拿到正确dhcp的mac 登录web查找正确dhcp的接口 配置全局 DHCP Snooping  system-view [H3C]dhcp snooping enable   配置信任端口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一次查找错误接入的DHCP">
+<meta property="og:url" content="http://hs.dury.cn/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/index.html">
 <meta property="og:site_name" content="Dury&#39;s Cards">
-<meta property="og:description" content="技术分享,备忘">
+<meta property="og:description" content="最近一段时间网络里一直有个错误的DHCP在广播错误的地址。这次准备花时间学习如何能快速定位这个设备。2023-06-12通过查资料有新的方法了。  先配置正确的固定IP ping DHCP 然后arp -a 拿到正确dhcp的mac 登录web查找正确dhcp的接口 配置全局 DHCP Snooping  system-view [H3C]dhcp snooping enable   配置信任端口">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-10T06:26:42.000Z">
+<meta property="article:modified_time" content="2023-06-12T01:37:35.000Z">
 <meta property="article:author" content="Dury Ding">
+<meta property="article:tag" content="备忘">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://hs.dury.cn/tags/WG-%E9%85%8D%E7%BD%AE/index.html">
+  <link rel="canonical" href="http://hs.dury.cn/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Dury&#39;s Cards" type="application/atom+xml">
   
@@ -186,95 +189,129 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: WG 配置</h1>
-      <p class="text-muted hidden-xs">共 1 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/DNS/">DNS</a></li>
-          
-          <li><a href="/tags/CoreDNS/">CoreDNS</a></li>
-          
-          <li><a href="/tags/crypt/">crypt</a></li>
-          
-          <li><a href="/tags/服务/">服务</a></li>
-          
-          <li><a href="/tags/docker/">docker</a></li>
-          
-          <li><a href="/tags/WG-配置/">WG 配置</a></li>
-          
-          <li><a href="/tags/运维/">运维</a></li>
-          
-          <li><a href="/tags/go/">go</a></li>
-          
-          <li><a href="/tags/wireguard/">wireguard</a></li>
-          
-          <li><a href="/tags/备忘/">备忘</a></li>
-          
-          <li><a href="/tags/艾克森/">艾克森</a></li>
-          
-          <li><a href="/tags/erp/">erp</a></li>
-          
-          <li><a href="/tags/金蝶K-3/">金蝶K|3</a></li>
-          
-          <li><a href="/tags/IP/">IP</a></li>
-          
-          <li><a href="/tags/配置文件/">配置文件</a></li>
-          
-          <li><a href="/tags/Hero/">Hero</a></li>
-          
-          <li><a href="/tags/portainer-io/">portainer.io</a></li>
-          
-          <li><a href="/tags/minio/">minio</a></li>
-          
-          <li><a href="/tags/金蝶K3/">金蝶K3</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
-        
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-24T08:26:26.000Z" itemprop="datePublished">2023-04-24</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2023/04/24/WireGuard-VPN/">WireGuard VPN</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
   
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/crypt/" class="label label-default mb">crypt</a>
-     
-      <a href="/tags/WG-%E9%85%8D%E7%BD%AE/" class="label label-default mb">WG 配置</a>
-     
-     
-   </div>
-   
-</article>
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-记录一次查找错误接入的DHCP" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      记录一次查找错误接入的DHCP
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/" class="article-date">
+	  <time datetime="2023-06-10T06:26:42.000Z" itemprop="datePublished">2023-06-10</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a>
+  </span>
 
 
-</div>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 407(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
 
       </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>最近一段时间网络里一直有个错误的DHCP在广播错误的地址。这次准备花时间学习如何能快速定位这个设备。<br>2023-06-12<br>通过查资料有新的方法了。</p>
+<ol>
+<li>先配置正确的固定IP</li>
+<li>ping DHCP 然后arp -a 拿到正确dhcp的mac</li>
+<li>登录web查找正确dhcp的接口</li>
+<li>配置全局 DHCP Snooping <ol>
+<li><H3C>system-view</li>
+<li>[H3C]dhcp snooping enable</li>
+</ol>
+</li>
+<li>配置信任端口<ol>
+<li>[H3C]interface GigabitEthernet 1&#x2F;0&#x2F;1</li>
+<li>[H3C-GigabitEthernet1&#x2F;0&#x2F;1]dhcp snooping trust</li>
+</ol>
+</li>
+<li>去所有接入交换分别找到去DHCP的接口并按照上面的命令开启 DHCP Snooping 。</li>
+</ol>
+<p>2023-06-10<br>思路是首先通过抓包找到该设备的MAC地址，然后通过交换机定位该设备的物理端口然后找到对应的设备。</p>
+<p>抓包软件：(Wireshark)[<a target="_blank" rel="noopener" href="https://www.wireshark.org/]">https://www.wireshark.org/]</a> 如果安装后找不到网卡再装个(npcap)[<a target="_blank" rel="noopener" href="https://npcap.com/]%E3%80%82">https://npcap.com/]。</a></p>
+<p>通过阅读文献确认所有DHCP 都会在DHCP过程中回复一个Offer包，先打开抓包软件确定网卡后断开连接重置捕获在连接网络 等几分钟停止捕获就可以了。<br>然后过滤所有的DHCP协议找到offer包查看源mac地址就找到那个设备的mac地址了。</p>
+<p>拿到了mac地址 接下来就是去交换机上找端口了。<br>一开始按说明书上的IP没有连到设备 通过console口发现是dhcp的 手动该IP到10.232 然后相近IP找到了233 234 还差一个应该是3楼的设备</p>
+<p>(DHCP协议详解)[<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265293856]">https://zhuanlan.zhihu.com/p/265293856]</a><br>(Wireshark分析DHCP)[<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24421591/article/details/50936469]">https://blog.csdn.net/qq_24421591/article/details/50936469]</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://hs.dury.cn/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/" title="记录一次查找错误接入的DHCP" target="_blank" rel="external">http://hs.dury.cn/2023/06/10/记录一次查找错误接入的DHCP/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+    </div>
   </article>
-   
+  
+    
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/05/15/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/" title="修改公共资料-&gt;客户-&gt;客户名称字段宽度"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -327,6 +364,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'WZVtW3SGgfWxVajau6Lz7NQL-9Nh9j0Va',
+    appKey: 'JKc2GWb58tdtNBaj7tXwaRRy',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
