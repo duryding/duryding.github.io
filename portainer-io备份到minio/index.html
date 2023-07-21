@@ -17,22 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Home  端口映射 | Dury&#39;s Cards</title>
-  <meta name="description" content="有东西被加密了, 请输入密码查看.">
+  <title>portainer.io备份到minio | Dury&#39;s Cards</title>
+  <meta name="description" content="今天升级好portainer.io后想起来可以备份到S3, 正好本地有个minio存储配置文件就记录下方法。  打开portainer.io Settings -&gt; Back up Portainer 打开Schedule automatic backups 启用自动备份 配置 Cron rule 0 2 * * *  每天2：00  测试cron rule 填写Access key ID">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Home  端口映射">
-<meta property="og:url" content="http://hs.dury.cn/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84">
+<meta property="og:title" content="portainer.io备份到minio">
+<meta property="og:url" content="http://hs.dury.cn/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio/index.html">
 <meta property="og:site_name" content="Dury&#39;s Cards">
-<meta property="og:description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:description" content="今天升级好portainer.io后想起来可以备份到S3, 正好本地有个minio存储配置文件就记录下方法。  打开portainer.io Settings -&gt; Back up Portainer 打开Schedule automatic backups 启用自动备份 配置 Cron rule 0 2 * * *  每天2：00  测试cron rule 填写Access key ID">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-07T03:45:39.000Z">
+<meta property="article:published_time" content="2023-05-05T08:27:57.000Z">
 <meta property="article:modified_time" content="2023-07-20T13:06:38.000Z">
 <meta property="article:author" content="Dury Ding">
-<meta property="article:tag" content="crypt">
-<meta property="article:tag" content="备忘">
+<meta property="article:tag" content="portainer.io">
+<meta property="article:tag" content="minio">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://hs.dury.cn/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84">
+  <link rel="canonical" href="http://hs.dury.cn/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Dury&#39;s Cards" type="application/atom+xml">
   
@@ -193,14 +193,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Home-端口映射" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-portainer-io备份到minio" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Home  端口映射
+      portainer.io备份到minio
     </h1>
   
 
@@ -208,15 +208,15 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84" class="article-date">
-	  <time datetime="2023-05-07T03:45:39.000Z" itemprop="datePublished">2023-05-07</time>
+	<a href="/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio/" class="article-date">
+	  <time datetime="2023-05-05T08:27:57.000Z" itemprop="datePublished">2023-05-05</time>
 	</a>
 </span>
         
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/crypt/" rel="tag">crypt</a>, <a class="article-tag-link-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a>
+	<a class="article-tag-link-link" href="/tags/minio/" rel="tag">minio</a>, <a class="article-tag-link-link" href="/tags/portainer-io/" rel="tag">portainer.io</a>
   </span>
 
 
@@ -229,10 +229,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 9(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 120(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -242,18 +242,18 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="0cae48c9fb4d273dba6c76430d435430b50ac7d4d79fd9de4c3896a80b0672ce">32398628e5649d3579e228ce4407dc2ae215d65b7ef00caeb417fcdbc242f259618ab69401920841794bcd02780160e07083a0c41060675901b7d07019f96ec709e3b6d2651d0e71158f9e617ce27a0159463ffa71642079fd8796d5ec45216a3c8fa1eabe9d8d527f4df1a24bd57bd9cb6f67b1c9c4c0d0023896846a6c103c3bf20b64a5a75681b4cf51ce41adb62b8b34b28efbf2658bd01a833ee71cd5058d73becba87c1d062efdcb335027618e189cb23688384a390d4d0e49ad15ea9bbcbe15a53a64f8335b7f22c410c0c8dbfa573db0ae1a78d739f2093e1218ff08e22ef24be01cf82e3b0e8abcabfd017a3222b44fcb6f05c71c4d4234997c993ecda732b32c2311fbb7efcc0a37b47a84be95dee72101edd03db61d434dbf6d84e299109a07f8a1b7f4ae788a7ab9b923729cc5dc248edc86ecbc01e5595c23334a017d1d046b665c292a341bf94155dda40459d47a6ae1af85a33867af359527efeb775b633396253b8a6d0ec13f8364a2bc8497e11b002f88696159a1743518301e9a109535b2c386704e8f0175e90fe97c192a1d58de7274cf73ec862d392d45e33d3a3e6587ff8ac1227690838cd4adb9b3f53a57eca230c19bfe4b0ae604f389dc64802dbdac9977daa3ae9b9eac1d8b918e72fd307d188c3114b01b73b5bedf1cfa05ea4278d03d497889debc016f444f5ce677a1d0fd1883ad804ddea9ae9b0de6d07a85c8c1a9bb4a97a395042269fe6d9b7ef2bf1888261008058c6631216d7056876694e68397334d51b44f71b2a6ffc4f9a016c8dc0a87565d12259f43176a65d8f9da6be41adabcf40305d45a5977416dbade3422d8f084fa42de05e355467c2a9bee9378975cb4a97ab537fded00eeba9639df7249d30426519d3ec69572dbe07a83cc813b0288e245f52e6914e68fc457f1b3609b58b5a766e9adade15272a8fe816cb608d206cf6ab407dcf256673aa25cabc58df4577b3e20e8a5c70d02d1922c14a97a02290309f014845fbe850b3a4b988e9005e03f9a658a63ae74db74ff3af1146d3c2b2c195173a1a8a5ed33059d8e9d9af1bc33bc2783ab15d547ccd69423b0ace29bbc911a965b436ee92d7797c59af7ff3a6dd589965c1a1d3f677b5a1d856f5e678870648f1ed6814955feb435090c766f7e344fa355dd1ac8f32067c6879d285d901a3ffdb7069b26dbce4d0aef03db833fb1ab526710318e5ad2f5ad9397fad36b7f61de9188844893ac1f655f0a661c9148ac949b945b537227a9fe01d9ef8f6bbc90f85f8a520297e8196c74bbc0b51bbc63adb44408ed3233e3b96b24577aa5bba43fcafe2212eafe0fe2c08ae37780f31a0b0bb50a8184cfc93a5d2abd9a4c0cf17304601fec6d992fcbee1b4f7ea7be3b8579e970002eaac5ac3dc55147c665c41b9a3bba9d3cdec621daa18c62eef1e04510393a62b13acd6ce83bfb13a3bf1d901fab0a6f384fd2b52819bc6a7e40cc06d0c4cf1fba8618569f5ddc284a36fdcaf432ff7b530eab029a5dfe1f842819bef002ad9121ba04ef37e667d08db2d3bcfe8e027a602f42b117eaee0ddde3175bceb4705bd350fe22ff7450dd2580d1dcbee07e098378b3353f4bdf78ab08e434ca58b9a8a1afd29148eabe52239ba375221e6aa5f9da96e94809ae0976b74e9f04e920d33b5ca5d546a8ae06a6fd40fe5e772f41a6578761146008bcea2b94e92a14acdca3af07de1b23c6754f27510c79d71d626826fb7b26a1cee446d60f3ab9cc34132052ef912e227eba8f1c1c2276af5da8864ab2df44dd4b78381a01fcedb5f26095565270ea715a99555d971c222e6338420dab94f7c810918828a6dc59d43f6087ef1a2012de8d99cbc83055e6d2613ad3d0ea375bf9490780cf459796ecd8c6562fe37456e2e5703a1bf8b7ad29270a80d60f1215d6b68a1a78c4a06a2deba2aaa0b53025d11b64939dfe3f145bdcb4d50fa9eb5519bd3a3eb9754816a88f94761413cecd51d8caf1cc4ecde0b9f976d358f83932eb624cbcb9a026e861a28cdc7951ac4dbd47ce35e65525ac91ad12403ee9d3fb786b1ccacc93a924a5ae239fecb1314465fdb99f3d390d0d1d1a741f92b012a46373e61391cd229d0c3a364655c654a4361ef29c2993b6ae58333bb6c446c8d51b0c12d74c56cec83c3b63f9cf22e866701ea87a806987be41406a7f18a1d0808220e65a26b1</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <p>今天升级好portainer.io后想起来可以备份到S3, 正好本地有个minio存储配置文件就记录下方法。</p>
+<ol>
+<li>打开portainer.io</li>
+<li>Settings -&gt; Back up Portainer</li>
+<li>打开Schedule automatic backups 启用自动备份</li>
+<li>配置 Cron rule 0 2 * * *  每天2：00  <a target="_blank" rel="noopener" href="https://crontab.cronhub.io/">测试cron rule</a></li>
+<li>填写Access key ID 和 Secret access key</li>
+<li>Region 在 minio -&gt; Administrator -&gt; Settings -&gt; Region 里配置。</li>
+<li>Bucket name 可以新建个也可以用之前的。</li>
+<li>S3 地址要有前面的http和后面的端口号。</li>
+</ol>
+
       
     </div>
     <div class="article-footer">
@@ -262,7 +262,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://hs.dury.cn/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84" title="Home  端口映射" target="_blank" rel="external">http://hs.dury.cn/home-端口映射</a>
+      <a href="http://hs.dury.cn/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio/" title="portainer.io备份到minio" target="_blank" rel="external">http://hs.dury.cn/portainer-io备份到minio/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -285,12 +285,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6" title="修改公共资料-&gt;客户-&gt;客户名称字段宽度"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/portainer-%E5%8D%87%E7%BA%A7/" title="Portainer 升级"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/minio-%E5%AE%89%E8%A3%85" title="minio 安装"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/hero-%E6%B1%87%E6%80%BB/" title="Hero 汇总"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

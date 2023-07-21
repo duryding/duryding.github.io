@@ -17,22 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>WireGuard VPN | Dury&#39;s Cards</title>
-  <meta name="description" content="有东西被加密了, 请输入密码查看.">
+  <title>wireguard安装 | Dury&#39;s Cards</title>
+  <meta name="description" content="安装sudo apt install wireguard 配置开启地址转发：$ echo “net.ipv4.ip_forward &#x3D; 1” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf$ echo “net.ipv4.conf.all.proxy_arp &#x3D; 1” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf$ sysctl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WireGuard VPN">
-<meta property="og:url" content="http://hs.dury.cn/wireguard-vpn">
+<meta property="og:title" content="wireguard安装">
+<meta property="og:url" content="http://hs.dury.cn/wireguard%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="Dury&#39;s Cards">
-<meta property="og:description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:description" content="安装sudo apt install wireguard 配置开启地址转发：$ echo “net.ipv4.ip_forward &#x3D; 1” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf$ echo “net.ipv4.conf.all.proxy_arp &#x3D; 1” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf$ sysctl">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-24T08:26:26.000Z">
+<meta property="article:published_time" content="2023-04-24T07:13:23.000Z">
 <meta property="article:modified_time" content="2023-07-20T13:06:38.000Z">
 <meta property="article:author" content="Dury Ding">
-<meta property="article:tag" content="crypt">
-<meta property="article:tag" content="WG 配置">
+<meta property="article:tag" content="服务">
+<meta property="article:tag" content="运维">
+<meta property="article:tag" content="wireguard">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://hs.dury.cn/wireguard-vpn">
+  <link rel="canonical" href="http://hs.dury.cn/wireguard%E5%AE%89%E8%A3%85/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Dury&#39;s Cards" type="application/atom+xml">
   
@@ -193,14 +194,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-WireGuard-VPN" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-wireguard安装" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      WireGuard VPN
+      wireguard安装
     </h1>
   
 
@@ -208,15 +209,15 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/wireguard-vpn" class="article-date">
-	  <time datetime="2023-04-24T08:26:26.000Z" itemprop="datePublished">2023-04-24</time>
+	<a href="/wireguard%E5%AE%89%E8%A3%85/" class="article-date">
+	  <time datetime="2023-04-24T07:13:23.000Z" itemprop="datePublished">2023-04-24</time>
 	</a>
 </span>
         
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/WG-%E9%85%8D%E7%BD%AE/" rel="tag">WG 配置</a>, <a class="article-tag-link-link" href="/tags/crypt/" rel="tag">crypt</a>
+	<a class="article-tag-link-link" href="/tags/wireguard/" rel="tag">wireguard</a>, <a class="article-tag-link-link" href="/tags/%E6%9C%8D%E5%8A%A1/" rel="tag">服务</a>, <a class="article-tag-link-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a>
   </span>
 
 
@@ -229,10 +230,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wireguard-vpn#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/wireguard%E5%AE%89%E8%A3%85/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 9(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 180(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -242,18 +243,15 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="9f07e4c295d449a7f9a1214fef6eb58360282551c29dfdf68cc7fea510652dbf">32398628e5649d3579e228ce4407dc2aef40471f7960e9c8fe664d00368d51c00e0fff17af6b448c6f616db2518a167cabfa0cd7f19bbf1fce35e48808e93457d0dac34f75c1b5c6c241a3a18c8c19c9b86983504c227f2dcfbd672281f43d3b854ebb9282428ef73f42de208bb0cad08c6842031e94a579e74be811edcb73709b53459984d37d59b58c5cd5dd90ba2fdc38397a734af5cf449ea4811b337684b74f7d8a00fbb7ce5906b2f16615dd84a28db7b5c13c22684c01630ef34416f866f419f008138b2012f210e34f04d55db2bb3c1b2b9fdda6aa2e74518565d5a9564547138068bb39a40bd95f3d89dc34cd853a8b528f336f4ba59f73db3dbd59cd41f485a9a37e382bb515c470458f07842edc63c03ae253004b176f1856479ea4711ce8efdbfc5bb78f7e74093375bfa7f4e8b535e69c4ae73696eeb37adcdf2c0f62e55346ef40919d8ec852cfea1352d8b36f02c7cb1c0c5ebbd3d6ffb0a8606d45ff8ebcadaa9e7534cef55a6f9d5e0d82e27fd46ba94b1e132485f611f0a6e153e2114f109d1c29988697c0ec7d4123246f83f23a079281f3f74c16a568e31b7adb6f0248e9bd07c453e1e3b2d0f73624a78487cc07895d878eb36b0cac439af89af38b00b7accb85a18018f9762901d3fd0cedcc84efaf584c2ee4fa74fb0c74addd4e362730e1a4605437a683657cdc11f0363ccef0b23b50b5fd8d4263a87244491c17a43c0f8dd09ea0795c1b0a354bf4588a46c0256d9c3efee9e714a5c8e2c38458c7035f345364150922a5a36df6cc2f9602144880d9de454d2782d8061a56e25ead5aaa2912f3539ac4606dc1d659b78a81b40497318096aa448d2b7d95e24e153a643a8599ef5e698f0bf9008e155116c68e79f3b1a27dac7430d77e2cf28b97c0e44eafbbb04c3e31beaa8a46db2ff0a2fb992906f17a505dd14c5465a6508549a8f1d2e0983e40f5e683ce6bd65ac76ba1284957f3500cef7e0bba243585f6467b0b5ae6d1226cedecee518d64db5d650a301c3f402faa064eb94383316e7926b42092b35e1b97ad55db7c2f345aac8f77b28a6331da54c3cf43ce215d482f5c2498e3d63291ba5a5fca2fdb21ca833aa1f9b5529dbcd9e994ab13351cec41d40eeb5346da32262f383940f3f53cdbb1112cd43d98e91ba108f2b1547abf5dfb15e19f343f1bc3742586376c84e2a92fd25e39cceb57797a0b0a97ab52c88917101883bea9a97e85a9d9fbdfc1e144e82d4b107a6853a474bb15dff456c2cb4f14c64441fd97056cd43e38f3f8d88b79bb425280ed3a6ff6b8b353d1a0b2730fac820f1f6c3536b6adbcfff949a23a24ad963d8f51ceefd02b421faac810aa19381b6a2d8f2e5528ea3a764ba3a670ae2b82b0eff140b7a00febde277cf6031ff5f09c5e772f685fa42e928260b4845335ed91deef42a2817f4bdfc6f8b96c2a4997d66bb8f37500f91f00646cc2140652db89268adbb8a5b30a3b379a149a7271ee9d37879615e7303d1e561a4a06e2ef66f6c4d695c494cb873eb29971804fcc5df00149a0978298f78ead50acb4ce72b108e863db80426858f0796c282062dcda2446be5b7db94523019461cf4172858f7d136773e68bda1c5c804c975c3ca71fe212d274b0618e3289f0a79c06b5b962a92daa53f1b05ef3600dcc97fb0cc27f45ee3115664940d6bc894bd21c09b3e555f03c73714a67a5a8d2da8a2be8b7a5049a1380d47a5a0305d58c08b505225b232f2b47e575cfbd4506d3c8e978aae583260cd1e960195f1c19e61dd9fd7ee75f7333cc1932b4f2838278d6b4011b3489cbc7bb597cf39c8e42228b9c644549bfecd6a9db5116d37e1e3edec30832fc75f7bcd0a9962bcb781ae4d922b28afadd536439d562d4f516152f968cf5aa259c0457c51830460a5962e9322f3d9647402af1d6424d8a9e51baec11d826c9a26dac123e166ca70d8ac98afab1f76a03d6843943054e2d051684192696a6317e0318190d5534e735d2dcf88fc6ded09c8b163193d28dd255020d471aad74d1e0814fcdcdc4adbd6e8ae2e1697eee8d6f9b8ca2e40c0c7007abac8a0878703549a67788f8bef6429c85be3ccdd1df6943494c6ef136125d43cd0cb1057418cadecce678ca01298c1c0e19613b029bf66369590f2f77098aa5b93f69e38d538c39a4194a402cb32efac578afb784e7d5b1f4c1df52c6e643968c13c5a8b42454e7066d79ad1eec1166e63f27813a8467457dae61f6de250ddfd6127abd71dd73a2b4a6d0068f9e9c303f4d8c6b344073b9b750629d5fb0b44f488d65f1c995bc65b19341cb84429f1e05ba936789242484f6d7579a6613d8b41c51995aa4451b0d88f5040367176a5f4747d1e6b17124492c269f237be98f09bb115f89c4099626b849b7d0c72a9c30ae48bb87c2b2703213287234c0f921951f19ec8a1dfe2e1a52bdbc023566f76302b89eafee097c3e7d5702d5e61d5bc212637137abe1b05fdf6f960c169875277c5287cc02b46c0748a2def195d3d1ac865ed80c555a65f7ef42729dcb6cffb762cf5a3feec52e1b0970d095a60ce11d4b950d6868cae1e256a33fbfcbc63e9fac3fe68b71dbb15d42a179bbf0a0bbc129f36378e41a505629fc774990b837733cf466de10377e2c2eb0cf326d25c485506837e50d5e6c43562aa6bfce79b028d17ec750be681fcfa44539ad93bcd263d05cca8f9f6abbd125bcd2adfccb1283a71c47c29900eb05d7065fed4a16ea6841ccb1571f167d00c787537f9d5748aab548d559f005cae4f5a7789c819f9d488d64b14dd12bd2d4d98f0a805e6fd9db94db619e98a981556cec2d83167d608acb1455a9b68ab514f2860c78866a963493c59489bf2263914f05c8f2c0f4011b27309428329b0a7c28af9e9a6941bde9a8296bc7350b8bc01105b6f8fa25bf7107667c87016deb046a76c3840dc8f3f78bfedc2f45e512116e5deb8e3979cf49e399663467fd85413d9c0217de1954393d748a9ab52ad7042973e8eb3494ba31c3c7661931eea30564ecbeba26d86c2b6ecb50056d06b9bdaea50e833abe80f4e63c91c4211602ed98f2c4b5774e6947c756b9b925d5b85e188af7481c3bb138c6ccfc1ba640e574ae3568ae536cebd2b96b4c4f11cf5f6893bbd51f6fd281ac658875e85954c0cbfd1e48d0982d4308887cd5be13bb618eef61ef17edc2870d1656c026bfca3d8944858e6d43127742620b661fcdef19183a740831422c91b529cdaf65e9addaf84733490419264e56763c39b0ab125e7935b177334068c5d7b2f451d7e9fa180a1812bf5397eb30410f985e3f58665d0d118f12fed89ff54745405002a178c7d70791017c1ff3a86cc4b43eb893f81b7d19fd876b02e3066de7ba49f20fb1a630fd2a09a7e2836aff9e64fd1b75e4850180aedb581de2fbeec166311717da25be7fe85630e4a56ba1d451fa7cbd0983985a4cef9875ff9d9379b4083d9164894c0a3ebc3dc0070f157b0f3d9ca2760209d739c56f2dddc23bad3578dc92fe91b23d66e6c52ebf67ad06a5d41a5621807eddf78a93b5d922adf4d8230c2b8eccee5fde15e9227e96cf1a421b1aa1cfc5d955003cd1be24dda674d8f625940890c6a2cd804b76a051bc55bab6e290154ccabaa90243e983d3db60ff404d868eaad452600cde77866558401e1c951611df9a8da9083321237519248f1e9bfd258cdae33fd60f5601dfd1e5d84c39535307a934d745cf2d88f0aab984beb1ebcb0a4085733b81021a33235bf71f55399f560b8baebef1523151ec50cd04c2cb2670f7f59d6a5ca810870da561fce93b4858cba1bdf4254a8bee1e4630c2adced7a13cbbadeb02b66e44901ec0dd3c22ae8b1c0bdd1dd51e5be82c50a7b809779e2f6621a3e7775a42eca7fa6328bac7848f49d774b34de46c0e82824c6eb858e4edadee80c306122d057d726b94822efd70c4f4799ce7dcfe081ecb095279dab9b5df5587ad07b45dbd1534b4e9955a9bbfe388387017788738dbeb0368806ca27312923f584a7c58adf524c2b33ebeea6b90c31ff6827bf313ee7f0336d1be6adace917c9d319433decdebf5812bbdfa2afba48528e780e9333be959070fbe2fe337905eb789878ea0ac0c5d30446b211d60dbc2ee391d3659543c762d49a976f30008f0dc62ffbb02cdc63d3dd5f5e5eed5d9a722a91849d2a75002b3142dbed925e86662da477dbe7d8ce402f8cf879de42031d1750562d04b98c83760ebae886bc8adae4eea3248eabd00dbe2037a4efa9bc37f362933b113caefb6e94364d3c28e96b196251c9d3e1a384db5557aca37372c10ea103c85241d0190d86c56d94d42b486d66e5b010e274275bdf3034e74eba92c31bbeca63e2bcfa32e4eab17a3e61a70810efe24c11a0f0ca8c71cf583d656ad0f9185c1de2a74d869ce0e0ae43bbbdc25189d766748f58423469a34626270e34b1f308f7f2fe069cfd8d5b5d4156a770109604e995ed1b7cd59c141ef8d9ba04853ff7528dd40b5c66ec27abdb28babcf7d46417ec89630cc9381ddf2e5f17f0a0071e12ef8d8647004b06d0fe55c213c480e4cdfbcbe32965a24eb743fd6cd16a2cc1aa275ce3b57af0513b00d47fec8361a40502fe6b91e98981b0234dee252b9c033e21dcc32123650bdf11a932fe7fd7839be0e2c8d827d71bd9b599804396ca077184735f22c5ee2b7622ededa0d3773</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>sudo apt install wireguard</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>开启地址转发：<br>$ echo “net.ipv4.ip_forward &#x3D; 1” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf<br>$ echo “net.ipv4.conf.all.proxy_arp &#x3D; 1” &gt;&gt; &#x2F;etc&#x2F;sysctl.conf<br>$ sysctl -p &#x2F;etc&#x2F;sysctl.conf </p>
+<p>配置防火墙：<br>iptables -A INPUT -m conntrack –ctstate RELATED,ESTABLISHED -j ACCEPT<br>iptables -A FORWARD -m conntrack –ctstate RELATED,ESTABLISHED -j ACCEPT<br>iptables -A FORWARD -i wg0 -o wg0 -m conntrack –ctstate NEW -j ACCEPT<br>iptables -t nat -A POSTROUTING -s 192.168.11.0&#x2F;24 -o ens160 -j MASQUERADE </p>
+<h1 id="一些简单的操作"><a href="#一些简单的操作" class="headerlink" title="一些简单的操作"></a>一些简单的操作</h1><p>ip link add dev wg0 type wireguard #建立wg0 VPN端口<br>ip addr add 192.168.7.2&#x2F;24 dev wg0 #设置WG0 的IP地址<br>wg-quick up wg0 #启动wg0 VPN<br>wg-quick down wg0 #关闭 WG0</p>
+<h1 id="开机自动启动"><a href="#开机自动启动" class="headerlink" title="开机自动启动"></a>开机自动启动</h1><p>systemctl enable wg-quick@wg0 –now</p>
+<hr>
+<p>引用：</p>
+<p><a target="_blank" rel="noopener" href="https://www.wireguard.com/install">https://www.wireguard.com/install</a><br><a target="_blank" rel="noopener" href="https://www.wireguard.com/quickstart/">https://www.wireguard.com/quickstart/</a><br><a target="_blank" rel="noopener" href="https://icloudnative.io/posts/wireguard-docs-practice/">https://icloudnative.io/posts/wireguard-docs-practice/</a></p>
+
       
     </div>
     <div class="article-footer">
@@ -262,7 +260,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://hs.dury.cn/wireguard-vpn" title="WireGuard VPN" target="_blank" rel="external">http://hs.dury.cn/wireguard-vpn</a>
+      <a href="http://hs.dury.cn/wireguard%E5%AE%89%E8%A3%85/" title="wireguard安装" target="_blank" rel="external">http://hs.dury.cn/wireguard安装/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -285,12 +283,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6" title="配置文件"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="go环境搭建"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/owss" title="OWSS"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/%E9%83%A8%E5%88%86-%E5%B7%B2%E7%9F%A5%E6%89%80%E6%9C%89-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6%EF%BC%8C%E4%B9%8B%E5%89%8D%E5%BB%BA%E7%AB%8B%E4%BA%86%E9%93%BE%E6%8E%A5%E7%9A%84%E8%83%BD%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E3%80%82/" title="部分(已知所有)客户端无法创建中间层组件，之前建立了链接的能正常使用。"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
