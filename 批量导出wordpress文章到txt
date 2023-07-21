@@ -17,18 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: 备忘 | Dury&#39;s Cards</title>
-  <meta name="description" content="技术分享,备忘">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dury&#39;s Cards">
-<meta property="og:url" content="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/">
+  <title>批量导出WordPress文章到TXT | Dury&#39;s Cards</title>
+  <meta name="description" content="一开始遇到的问题：  连接数据库失败，应为密码有特殊符号所有无法正常连接。网上搜到解决方法是引入urllib.parse库使用quote_plus方法格式化密码。 查询中的post和private必须用”框起来，不能用&#96;和’不然会报错。 with的用法。 有个文件名有特殊字符直接修改了数据库。  1234567891011121314151617181920import pandas as">
+<meta property="og:type" content="article">
+<meta property="og:title" content="批量导出WordPress文章到TXT">
+<meta property="og:url" content="http://hs.dury.cn/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAwordpress%E6%96%87%E7%AB%A0%E5%88%B0txt">
 <meta property="og:site_name" content="Dury&#39;s Cards">
-<meta property="og:description" content="技术分享,备忘">
+<meta property="og:description" content="一开始遇到的问题：  连接数据库失败，应为密码有特殊符号所有无法正常连接。网上搜到解决方法是引入urllib.parse库使用quote_plus方法格式化密码。 查询中的post和private必须用”框起来，不能用&#96;和’不然会报错。 with的用法。 有个文件名有特殊字符直接修改了数据库。  1234567891011121314151617181920import pandas as">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-20T13:15:02.000Z">
+<meta property="article:modified_time" content="2023-07-20T23:57:05.000Z">
 <meta property="article:author" content="Dury Ding">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/index.html">
+  <link rel="canonical" href="http://hs.dury.cn/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAwordpress%E6%96%87%E7%AB%A0%E5%88%B0txt">
   
     <link rel="alternate" href="/atom.xml" title="Dury&#39;s Cards" type="application/atom+xml">
   
@@ -186,252 +188,111 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: 备忘</h1>
-      <p class="text-muted hidden-xs">共 6 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/DNS/">DNS</a></li>
-          
-          <li><a href="/tags/CoreDNS/">CoreDNS</a></li>
-          
-          <li><a href="/tags/crypt/">crypt</a></li>
-          
-          <li><a href="/tags/服务/">服务</a></li>
-          
-          <li><a href="/tags/docker/">docker</a></li>
-          
-          <li><a href="/tags/WG-配置/">WG 配置</a></li>
-          
-          <li><a href="/tags/运维/">运维</a></li>
-          
-          <li><a href="/tags/go/">go</a></li>
-          
-          <li><a href="/tags/wireguard/">wireguard</a></li>
-          
-          <li><a href="/tags/备忘/">备忘</a></li>
-          
-          <li><a href="/tags/艾克森/">艾克森</a></li>
-          
-          <li><a href="/tags/erp/">erp</a></li>
-          
-          <li><a href="/tags/金蝶K-3/">金蝶K|3</a></li>
-          
-          <li><a href="/tags/IP/">IP</a></li>
-          
-          <li><a href="/tags/配置文件/">配置文件</a></li>
-          
-          <li><a href="/tags/Hero/">Hero</a></li>
-          
-          <li><a href="/tags/portainer-io/">portainer.io</a></li>
-          
-          <li><a href="/tags/minio/">minio</a></li>
-          
-          <li><a href="/tags/金蝶K3/">金蝶K3</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-批量导出WordPress文章到TXT" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
         
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-06-10T06:26:42.000Z" itemprop="datePublished">2023-06-10</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84dhcp">记录一次查找错误接入的DHCP</a>
-     </h3>
- 
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-05-07T03:45:39.000Z" itemprop="datePublished">2023-05-07</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84">Home  端口映射</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
   
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/crypt/" class="label label-default mb">crypt</a>
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-26T07:57:48.000Z" itemprop="datePublished">2023-04-26</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/hero-%E6%B1%87%E6%80%BB">Hero 汇总</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    <p>记录在使用Hexo过程中的一些心得体会。</p>
-  </div>
+    <h1 class="article-title" itemprop="name">
+      批量导出WordPress文章到TXT
+    </h1>
   
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/%E6%9C%8D%E5%8A%A1/" class="label label-default mb">服务</a>
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-      <a href="/tags/Hero/" class="label label-default mb">Hero</a>
-     
-     
-   </div>
-   
-</article>
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAwordpress%E6%96%87%E7%AB%A0%E5%88%B0txt" class="article-date">
+	  <time datetime="2023-07-20T13:15:02.000Z" itemprop="datePublished">2023-07-20</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
 
 
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-25T11:05:46.000Z" itemprop="datePublished">2023-04-25</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9Aip">艾克森固定IP</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
-  
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-      <a href="/tags/%E8%89%BE%E5%85%8B%E6%A3%AE/" class="label label-default mb">艾克森</a>
-     
-      <a href="/tags/IP/" class="label label-default mb">IP</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-25T01:03:30.000Z" itemprop="datePublished">2023-04-25</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">配置文件</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
-  
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/crypt/" class="label label-default mb">crypt</a>
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-      <a href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" class="label label-default mb">配置文件</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-24T08:25:49.000Z" itemprop="datePublished">2023-04-24</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/%E6%9C%8D%E5%8A%A1">服务</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
-  
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/crypt/" class="label label-default mb">crypt</a>
-     
-      <a href="/tags/%E6%9C%8D%E5%8A%A1/" class="label label-default mb">服务</a>
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAwordpress%E6%96%87%E7%AB%A0%E5%88%B0txt#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 347(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
 
       </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>一开始遇到的问题：</p>
+<ol>
+<li>连接数据库失败，应为密码有特殊符号所有无法正常连接。网上搜到解决方法是引入urllib.parse库使用quote_plus方法格式化密码。</li>
+<li>查询中的post和private必须用”框起来，不能用&#96;和’不然会报错。</li>
+<li>with的用法。</li>
+<li>有个文件名有特殊字符直接修改了数据库。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化数据库连接</span></span><br><span class="line"><span class="comment"># 按实际情况依次填写MySQL的用户名、密码、IP地址、端口、数据库名</span></span><br><span class="line">engine = create_engine(<span class="string">&quot;mysql+pymysql://&#123;&#125;:&#123;&#125;@&#123;&#125;:&#123;&#125;/&#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&#x27;root&#x27;</span>,urllib.parse.quote_plus(<span class="string">&#x27;p@ssword&#x27;</span>), <span class="string">&#x27;192.168.7.3&#x27;</span>, <span class="string">&#x27;3306&#x27;</span>, <span class="string">&#x27;wordpress&#x27;</span>))</span><br><span class="line"><span class="comment"># MySQL导入DataFrame</span></span><br><span class="line"><span class="comment"># 填写自己所需的SQL语句，可以是复杂的查询语句</span></span><br><span class="line"><span class="comment">#sql_query = &#x27;SELECT `post_title`,`post_content_filtered`,`post_status`,`post_type` FROM `wp_posts` WHERE  `post_type`=&quot;post&quot; and `post_status`= &quot;private&quot;;&#x27;</span></span><br><span class="line">sql_query = <span class="string">&#x27;SELECT `post_title`, `post_content_filtered`, `post_status`, `post_type` FROM `wp_posts` WHERE `post_type` =&quot;post&quot; and `post_status`=&quot;publish&quot;;&#x27;</span></span><br><span class="line"><span class="comment"># 使用pandas的read_sql_query函数执行SQL语句，并存入DataFrame</span></span><br><span class="line">df_read = pd.read_sql_query(sql_query, engine)</span><br><span class="line"><span class="built_in">print</span>(df_read)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">39</span>):</span><br><span class="line">    file=df_read.loc[x][<span class="number">0</span>] + <span class="string">&quot;.md&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file, mode=<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(df_read.loc[x][<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>参考文献：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/616126182">SQLAlchemy 的 create_engine 方法</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/xrinosvip/article/details/82019844">python 使用 with open（） as 读写文件</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Parzival_/article/details/114240650">Python Pandas中dataframe常用操作（创建、读取写入、切片等）</a><br><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/python/python_for_loops.asp">Python For 循环</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/ai520wangzha/article/details/130405905">Python实现将内容写入文件的五种方法总结</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://hs.dury.cn/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAwordpress%E6%96%87%E7%AB%A0%E5%88%B0txt" title="批量导出WordPress文章到TXT" target="_blank" rel="external">http://hs.dury.cn/批量导出wordpress文章到txt</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+    </div>
   </article>
-   
+  
+    
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84dhcp" title="记录一次查找错误接入的DHCP"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -485,6 +346,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'WZVtW3SGgfWxVajau6Lz7NQL-9Nh9j0Va',
+    appKey: 'JKc2GWb58tdtNBaj7tXwaRRy',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 

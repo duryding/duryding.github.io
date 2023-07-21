@@ -17,18 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: 备忘 | Dury&#39;s Cards</title>
-  <meta name="description" content="技术分享,备忘">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dury&#39;s Cards">
-<meta property="og:url" content="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/">
+  <title>服务 | Dury&#39;s Cards</title>
+  <meta name="description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务">
+<meta property="og:url" content="http://hs.dury.cn/%E6%9C%8D%E5%8A%A1">
 <meta property="og:site_name" content="Dury&#39;s Cards">
-<meta property="og:description" content="技术分享,备忘">
+<meta property="og:description" content="有东西被加密了, 请输入密码查看.">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-24T08:25:49.000Z">
+<meta property="article:modified_time" content="2023-07-20T13:06:38.000Z">
 <meta property="article:author" content="Dury Ding">
+<meta property="article:tag" content="crypt">
+<meta property="article:tag" content="服务">
+<meta property="article:tag" content="备忘">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://hs.dury.cn/tags/%E5%A4%87%E5%BF%98/index.html">
+  <link rel="canonical" href="http://hs.dury.cn/%E6%9C%8D%E5%8A%A1">
   
     <link rel="alternate" href="/atom.xml" title="Dury&#39;s Cards" type="application/atom+xml">
   
@@ -186,252 +191,127 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: 备忘</h1>
-      <p class="text-muted hidden-xs">共 6 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/DNS/">DNS</a></li>
-          
-          <li><a href="/tags/CoreDNS/">CoreDNS</a></li>
-          
-          <li><a href="/tags/crypt/">crypt</a></li>
-          
-          <li><a href="/tags/服务/">服务</a></li>
-          
-          <li><a href="/tags/docker/">docker</a></li>
-          
-          <li><a href="/tags/WG-配置/">WG 配置</a></li>
-          
-          <li><a href="/tags/运维/">运维</a></li>
-          
-          <li><a href="/tags/go/">go</a></li>
-          
-          <li><a href="/tags/wireguard/">wireguard</a></li>
-          
-          <li><a href="/tags/备忘/">备忘</a></li>
-          
-          <li><a href="/tags/艾克森/">艾克森</a></li>
-          
-          <li><a href="/tags/erp/">erp</a></li>
-          
-          <li><a href="/tags/金蝶K-3/">金蝶K|3</a></li>
-          
-          <li><a href="/tags/IP/">IP</a></li>
-          
-          <li><a href="/tags/配置文件/">配置文件</a></li>
-          
-          <li><a href="/tags/Hero/">Hero</a></li>
-          
-          <li><a href="/tags/portainer-io/">portainer.io</a></li>
-          
-          <li><a href="/tags/minio/">minio</a></li>
-          
-          <li><a href="/tags/金蝶K3/">金蝶K3</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-服务" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
         
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-06-10T06:26:42.000Z" itemprop="datePublished">2023-06-10</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84dhcp">记录一次查找错误接入的DHCP</a>
-     </h3>
- 
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-05-07T03:45:39.000Z" itemprop="datePublished">2023-05-07</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84">Home  端口映射</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
   
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/crypt/" class="label label-default mb">crypt</a>
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-26T07:57:48.000Z" itemprop="datePublished">2023-04-26</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/hero-%E6%B1%87%E6%80%BB">Hero 汇总</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    <p>记录在使用Hexo过程中的一些心得体会。</p>
-  </div>
+    <h1 class="article-title" itemprop="name">
+      服务
+    </h1>
   
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/%E6%9C%8D%E5%8A%A1/" class="label label-default mb">服务</a>
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-      <a href="/tags/Hero/" class="label label-default mb">Hero</a>
-     
-     
-   </div>
-   
-</article>
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/%E6%9C%8D%E5%8A%A1" class="article-date">
+	  <time datetime="2023-04-24T08:25:49.000Z" itemprop="datePublished">2023-04-24</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%A4%87%E5%BF%98/">备忘</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/crypt/" rel="tag">crypt</a>, <a class="article-tag-link-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a>, <a class="article-tag-link-link" href="/tags/%E6%9C%8D%E5%8A%A1/" rel="tag">服务</a>
+  </span>
 
 
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-25T11:05:46.000Z" itemprop="datePublished">2023-04-25</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9Aip">艾克森固定IP</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
-  
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-      <a href="/tags/%E8%89%BE%E5%85%8B%E6%A3%AE/" class="label label-default mb">艾克森</a>
-     
-      <a href="/tags/IP/" class="label label-default mb">IP</a>
-     
-     
-   </div>
-   
-</article>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
 
 
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-25T01:03:30.000Z" itemprop="datePublished">2023-04-25</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">配置文件</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
-  
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/crypt/" class="label label-default mb">crypt</a>
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-      <a href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" class="label label-default mb">配置文件</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-04-24T08:25:49.000Z" itemprop="datePublished">2023-04-24</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/%E6%9C%8D%E5%8A%A1">服务</a>
-     </h3>
- 
-  <div class="article-entry text-muted" itemprop="description">
-    有东西被加密了, 请输入密码查看.
-  </div>
-  
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/crypt/" class="label label-default mb">crypt</a>
-     
-      <a href="/tags/%E6%9C%8D%E5%8A%A1/" class="label label-default mb">服务</a>
-     
-      <a href="/tags/%E5%A4%87%E5%BF%98/" class="label label-default mb">备忘</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/%E6%9C%8D%E5%8A%A1#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 9(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
 
       </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="3c1ad31a1356312fc709eadb2452b6b337bdc4925180dee61ca89c21c6bc3a7d">32398628e5649d3579e228ce4407dc2a1c4f0c41b8ae9c8a50833dc0519cb0669e14b6fe1c30476cbb5f4cb6c5dc9845ef2ed465aab59452270cd2786d26b21c6643ad98510fbe785dca23b6c949a1ac1e92c2d38bd56aea3fd098412fd0ec033171beb350e498869ae3b55caf2d237c50edd45c5c10aff9e60f48bbdf6a41ad86cc33635514832189ca2efc364a0738f06b8f15c81cebbe7f59126bebb0138239b9e7463716b1063c52dcb8f8201e5957af6b83c492f2f7250691b77ae225a3a42f93dadc3bf33ecc8af41770b195c4c7742a29b5fe69db3b5b31d73f5f055a87e32e4108abf1143842a374e9cb3636a6ecaa1a415201d48a93bb5193690e7924d2caa2f999284f73c6ba2d0c137b240340a058bad4a8d4e01f5212ad89199976ac78dd1416ab9094653e8ebbf4c48e6cb1aff093156c368d9c2b8a5d94bbe6c51ab71bbcb714dea34c239dfed64b529538d19581cd62963c53f5759d408491d47f0b226e19cac4c065aa9c20b7e322055d7f47b0a3aa0335c47e814500818789598fd54d8b9d242979aaebdf84b4119eae3cecc193e418a5b9490a06ee7f4d20f353d340831b9d1028173c91787143f6ed06e652f8a20538957c3e0f3c0d73f397413cd10ea41f7c0bc3dcdd473ec8ab7d3b7f9ae06270f64617024f8c7fa9b914f954286374fddb1127519463314d296bab293f999cbfffbf2d350e67c2a6cdb901957b0eaa8bc4705dbffc1c8119940f5d76bd19b83c492b75284cd2399c9d641fc1f20d20a380d1c7f0f8055f351116bb542b87ef1fc194ee21ca46e27eee427d84bb1d02418633235453ae7797cb2072778f37990fef925f373ac8e7fbe33a53ccb8fd7c11bf4f418e4dff80d6ca31955ace546f2412437960ee4e46c59ef2a711563e448213700d00d68d66bc7ab3061a626c57ca7e7cdf6d04581c85fba1a82ca5e41ec4d5189a6dd90831e918f28172285ba8ffa03b563b9729add08ee2925a4104b95b9fb84e766f378799d9793c2920694b4096834b42af9db953bf14b83d5ea62989669107d467989be81ef0a0486d295a61a11461f4655a61f9aaf68e0664df6624bc7f2f8c029ff6f76b1440b849d3e5c767361df37fa18fb88f0de0760c7decaa63427813003501241238a165133d87a2a26f1dfa54415d27fab494cc411263ce6547e55255326084333120fa9483c30c17b001d591a5c8577ae486fec1eee3ec6a0218f63df3f883e7c7e0a67ff03be1b5c6522f4dcd4a55a93d0bc28cb1aee120764c6e7cd31b50b41466cedb48595d6bd06dac4afc760dc67aee3ba1c25d9d63ead4e9336f6935f538dccf84319eb24d8ab3ed88de6fc19664b2ee8a541c637a59099c5789f8926df399038930aa459fd1fd9612478821ede483cf6b03422c5bfcafe8346af27f48184cde47dcbadad7a3797c93da3cdbb9b4f75a830015a50cdbe9a09fcab78eeb8483e220e4f360615ec06739ab6a44</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://hs.dury.cn/%E6%9C%8D%E5%8A%A1" title="服务" target="_blank" rel="external">http://hs.dury.cn/服务</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+    </div>
   </article>
-   
+  
+    
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/owss" title="OWSS"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/coredns%E6%90%AD%E5%BB%BA" title="CoreDNS搭建"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -485,6 +365,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'WZVtW3SGgfWxVajau6Lz7NQL-9Nh9j0Va',
+    appKey: 'JKc2GWb58tdtNBaj7tXwaRRy',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 

@@ -6,7 +6,7 @@
   <link href="http://hs.dury.cn/atom.xml" rel="self"/>
   
   <link href="http://hs.dury.cn/"/>
-  <updated>2023-07-20T23:51:31.658Z</updated>
+  <updated>2023-07-20T23:57:05.000Z</updated>
   <id>http://hs.dury.cn/</id>
   
   <author>
@@ -18,19 +18,20 @@
   
   <entry>
     <title>批量导出WordPress文章到TXT</title>
-    <link href="http://hs.dury.cn/2023/07/20/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAWordPress%E6%96%87%E7%AB%A0%E5%88%B0TXT/"/>
-    <id>http://hs.dury.cn/2023/07/20/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAWordPress%E6%96%87%E7%AB%A0%E5%88%B0TXT/</id>
+    <link href="http://hs.dury.cn/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAwordpress%E6%96%87%E7%AB%A0%E5%88%B0txt"/>
+    <id>http://hs.dury.cn/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BAwordpress%E6%96%87%E7%AB%A0%E5%88%B0txt</id>
     <published>2023-07-20T13:15:02.000Z</published>
-    <updated>2023-07-20T23:51:31.658Z</updated>
+    <updated>2023-07-20T23:57:05.000Z</updated>
     
-    <content type="html"><![CDATA[<p>一开始遇到的问题：</p><ol><li>连接数据库失败，应为密码有特殊符号所有无法正常连接。网上搜到解决方法是引入urllib.parse库使用quote_plus方法格式化密码。<a href="https://zhuanlan.zhihu.com/p/616126182">SQLAlchemy 的 create_engine 方法</a></li><li>查询中的post和private必须用”框起来，不能用&#96;和’不然会报错。</li><li>with的用法。<a href="https://blog.csdn.net/xrinosvip/article/details/82019844">python 使用 with open（） as 读写文件</a></li><li>有个文件名有特殊字符直接修改了数据库。</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化数据库连接</span></span><br><span class="line"><span class="comment"># 按实际情况依次填写MySQL的用户名、密码、IP地址、端口、数据库名</span></span><br><span class="line">engine = create_engine(<span class="string">&quot;mysql+pymysql://&#123;&#125;:&#123;&#125;@&#123;&#125;:&#123;&#125;/&#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&#x27;root&#x27;</span>,urllib.parse.quote_plus(<span class="string">&#x27;p@ssword&#x27;</span>), <span class="string">&#x27;192.168.7.3&#x27;</span>, <span class="string">&#x27;3306&#x27;</span>, <span class="string">&#x27;wordpress&#x27;</span>))</span><br><span class="line"><span class="comment"># MySQL导入DataFrame</span></span><br><span class="line"><span class="comment"># 填写自己所需的SQL语句，可以是复杂的查询语句</span></span><br><span class="line"><span class="comment">#sql_query = &#x27;SELECT `post_title`,`post_content_filtered`,`post_status`,`post_type` FROM `wp_posts` WHERE  `post_type`=&quot;post&quot; and `post_status`= &quot;private&quot;;&#x27;</span></span><br><span class="line">sql_query = <span class="string">&#x27;SELECT `post_title`, `post_content_filtered`, `post_status`, `post_type` FROM `wp_posts` WHERE `post_type` =&quot;post&quot; and `post_status`=&quot;publish&quot;;&#x27;</span></span><br><span class="line"><span class="comment"># 使用pandas的read_sql_query函数执行SQL语句，并存入DataFrame</span></span><br><span class="line">df_read = pd.read_sql_query(sql_query, engine)</span><br><span class="line"><span class="built_in">print</span>(df_read)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">39</span>):</span><br><span class="line">    file=df_read.loc[x][<span class="number">0</span>] + <span class="string">&quot;.md&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file, mode=<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(df_read.loc[x][<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>一开始遇到的问题：</p><ol><li>连接数据库失败，应为密码有特殊符号所有无法正常连接。网上搜到解决方法是引入urllib.parse库使用quote_plus方法格式化密码。</li><li>查询中的post和private必须用”框起来，不能用&#96;和’不然会报错。</li><li>with的用法。</li><li>有个文件名有特殊字符直接修改了数据库。</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化数据库连接</span></span><br><span class="line"><span class="comment"># 按实际情况依次填写MySQL的用户名、密码、IP地址、端口、数据库名</span></span><br><span class="line">engine = create_engine(<span class="string">&quot;mysql+pymysql://&#123;&#125;:&#123;&#125;@&#123;&#125;:&#123;&#125;/&#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&#x27;root&#x27;</span>,urllib.parse.quote_plus(<span class="string">&#x27;p@ssword&#x27;</span>), <span class="string">&#x27;192.168.7.3&#x27;</span>, <span class="string">&#x27;3306&#x27;</span>, <span class="string">&#x27;wordpress&#x27;</span>))</span><br><span class="line"><span class="comment"># MySQL导入DataFrame</span></span><br><span class="line"><span class="comment"># 填写自己所需的SQL语句，可以是复杂的查询语句</span></span><br><span class="line"><span class="comment">#sql_query = &#x27;SELECT `post_title`,`post_content_filtered`,`post_status`,`post_type` FROM `wp_posts` WHERE  `post_type`=&quot;post&quot; and `post_status`= &quot;private&quot;;&#x27;</span></span><br><span class="line">sql_query = <span class="string">&#x27;SELECT `post_title`, `post_content_filtered`, `post_status`, `post_type` FROM `wp_posts` WHERE `post_type` =&quot;post&quot; and `post_status`=&quot;publish&quot;;&#x27;</span></span><br><span class="line"><span class="comment"># 使用pandas的read_sql_query函数执行SQL语句，并存入DataFrame</span></span><br><span class="line">df_read = pd.read_sql_query(sql_query, engine)</span><br><span class="line"><span class="built_in">print</span>(df_read)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">39</span>):</span><br><span class="line">    file=df_read.loc[x][<span class="number">0</span>] + <span class="string">&quot;.md&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file, mode=<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(df_read.loc[x][<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>参考文献：<br><a href="https://zhuanlan.zhihu.com/p/616126182">SQLAlchemy 的 create_engine 方法</a><br><a href="https://blog.csdn.net/xrinosvip/article/details/82019844">python 使用 with open（） as 读写文件</a><br><a href="https://blog.csdn.net/Parzival_/article/details/114240650">Python Pandas中dataframe常用操作（创建、读取写入、切片等）</a><br><a href="https://www.w3school.com.cn/python/python_for_loops.asp">Python For 循环</a><br><a href="https://blog.csdn.net/ai520wangzha/article/details/130405905">Python实现将内容写入文件的五种方法总结</a></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;一开始遇到的问题：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;连接数据库失败，应为密码有特殊符号所有无法正常连接。网上搜到解决方法是引入urllib.parse库使用quote_plus方法格式化密码。&lt;a href=&quot;https://zhuanlan.zhihu.com/p/616126</summary>
+&lt;li&gt;连接数据库失败，应为密码有特殊符号所有无法正常连接。网上搜到解决方法是引入urllib.parse库使用quote_plus方法格式化密码。&lt;/li&gt;
+&lt;li&gt;查询中的post和private必须用”框起来，不能用&amp;#96;和’</summary>
       
     
     
@@ -40,8 +41,8 @@
   
   <entry>
     <title>记录一次查找错误接入的DHCP</title>
-    <link href="http://hs.dury.cn/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/"/>
-    <id>http://hs.dury.cn/2023/06/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84DHCP/</id>
+    <link href="http://hs.dury.cn/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84dhcp"/>
+    <id>http://hs.dury.cn/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9F%A5%E6%89%BE%E9%94%99%E8%AF%AF%E6%8E%A5%E5%85%A5%E7%9A%84dhcp</id>
     <published>2023-06-10T06:26:42.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -65,8 +66,8 @@
   
   <entry>
     <title>修改公共资料-&gt;客户-&gt;客户名称字段宽度</title>
-    <link href="http://hs.dury.cn/2023/05/15/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/"/>
-    <id>http://hs.dury.cn/2023/05/15/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6/</id>
+    <link href="http://hs.dury.cn/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6"/>
+    <id>http://hs.dury.cn/%E4%BF%AE%E6%94%B9%E5%85%AC%E5%85%B1%E8%B5%84%E6%96%99-%E5%AE%A2%E6%88%B7-%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6</id>
     <published>2023-05-15T05:41:38.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -88,8 +89,8 @@
   
   <entry>
     <title>Home  端口映射</title>
-    <link href="http://hs.dury.cn/2023/05/07/Home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/"/>
-    <id>http://hs.dury.cn/2023/05/07/Home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</id>
+    <link href="http://hs.dury.cn/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84"/>
+    <id>http://hs.dury.cn/home-%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84</id>
     <published>2023-05-07T03:45:39.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -109,8 +110,8 @@
   
   <entry>
     <title>minio 安装</title>
-    <link href="http://hs.dury.cn/2023/05/06/minio-%E5%AE%89%E8%A3%85/"/>
-    <id>http://hs.dury.cn/2023/05/06/minio-%E5%AE%89%E8%A3%85/</id>
+    <link href="http://hs.dury.cn/minio-%E5%AE%89%E8%A3%85"/>
+    <id>http://hs.dury.cn/minio-%E5%AE%89%E8%A3%85</id>
     <published>2023-05-06T06:00:17.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -133,8 +134,8 @@
   
   <entry>
     <title>Portainer 升级</title>
-    <link href="http://hs.dury.cn/2023/05/05/Portainer-%E5%8D%87%E7%BA%A7/"/>
-    <id>http://hs.dury.cn/2023/05/05/Portainer-%E5%8D%87%E7%BA%A7/</id>
+    <link href="http://hs.dury.cn/portainer-%E5%8D%87%E7%BA%A7"/>
+    <id>http://hs.dury.cn/portainer-%E5%8D%87%E7%BA%A7</id>
     <published>2023-05-05T08:48:18.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -159,8 +160,8 @@
   
   <entry>
     <title>portainer.io备份到minio</title>
-    <link href="http://hs.dury.cn/2023/05/05/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio/"/>
-    <id>http://hs.dury.cn/2023/05/05/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio/</id>
+    <link href="http://hs.dury.cn/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio"/>
+    <id>http://hs.dury.cn/portainer-io%E5%A4%87%E4%BB%BD%E5%88%B0minio</id>
     <published>2023-05-05T08:27:57.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -187,8 +188,8 @@
   
   <entry>
     <title>Hero 汇总</title>
-    <link href="http://hs.dury.cn/2023/04/26/Hero-%E6%B1%87%E6%80%BB/"/>
-    <id>http://hs.dury.cn/2023/04/26/Hero-%E6%B1%87%E6%80%BB/</id>
+    <link href="http://hs.dury.cn/hero-%E6%B1%87%E6%80%BB"/>
+    <id>http://hs.dury.cn/hero-%E6%B1%87%E6%80%BB</id>
     <published>2023-04-26T07:57:48.000Z</published>
     <updated>2023-04-27T01:52:00.000Z</updated>
     
@@ -212,8 +213,8 @@
   
   <entry>
     <title>艾克森固定IP</title>
-    <link href="http://hs.dury.cn/2023/04/25/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9AIP/"/>
-    <id>http://hs.dury.cn/2023/04/25/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9AIP/</id>
+    <link href="http://hs.dury.cn/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9Aip"/>
+    <id>http://hs.dury.cn/%E8%89%BE%E5%85%8B%E6%A3%AE%E5%9B%BA%E5%AE%9Aip</id>
     <published>2023-04-25T11:05:46.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -235,8 +236,8 @@
   
   <entry>
     <title>配置文件</title>
-    <link href="http://hs.dury.cn/2023/04/25/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-    <id>http://hs.dury.cn/2023/04/25/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</id>
+    <link href="http://hs.dury.cn/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"/>
+    <id>http://hs.dury.cn/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6</id>
     <published>2023-04-25T01:03:30.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -258,8 +259,8 @@
   
   <entry>
     <title>WireGuard VPN</title>
-    <link href="http://hs.dury.cn/2023/04/24/WireGuard-VPN/"/>
-    <id>http://hs.dury.cn/2023/04/24/WireGuard-VPN/</id>
+    <link href="http://hs.dury.cn/wireguard-vpn"/>
+    <id>http://hs.dury.cn/wireguard-vpn</id>
     <published>2023-04-24T08:26:26.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -279,8 +280,8 @@
   
   <entry>
     <title>OWSS</title>
-    <link href="http://hs.dury.cn/2023/04/24/OWSS/"/>
-    <id>http://hs.dury.cn/2023/04/24/OWSS/</id>
+    <link href="http://hs.dury.cn/owss"/>
+    <id>http://hs.dury.cn/owss</id>
     <published>2023-04-24T08:26:12.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -303,8 +304,8 @@
   
   <entry>
     <title>服务</title>
-    <link href="http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1/</id>
+    <link href="http://hs.dury.cn/%E6%9C%8D%E5%8A%A1"/>
+    <id>http://hs.dury.cn/%E6%9C%8D%E5%8A%A1</id>
     <published>2023-04-24T08:25:49.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -328,8 +329,8 @@
   
   <entry>
     <title>CoreDNS搭建</title>
-    <link href="http://hs.dury.cn/2023/04/24/CoreDNS%E6%90%AD%E5%BB%BA/"/>
-    <id>http://hs.dury.cn/2023/04/24/CoreDNS%E6%90%AD%E5%BB%BA/</id>
+    <link href="http://hs.dury.cn/coredns%E6%90%AD%E5%BB%BA"/>
+    <id>http://hs.dury.cn/coredns%E6%90%AD%E5%BB%BA</id>
     <published>2023-04-24T07:41:38.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -351,8 +352,8 @@
   
   <entry>
     <title>ubuntu_12.04_关闭自带的dns服务</title>
-    <link href="http://hs.dury.cn/2023/04/24/ubuntu-12-04-%E5%85%B3%E9%97%AD%E8%87%AA%E5%B8%A6%E7%9A%84dns%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://hs.dury.cn/2023/04/24/ubuntu-12-04-%E5%85%B3%E9%97%AD%E8%87%AA%E5%B8%A6%E7%9A%84dns%E6%9C%8D%E5%8A%A1/</id>
+    <link href="http://hs.dury.cn/ubuntu-12-04-%E5%85%B3%E9%97%AD%E8%87%AA%E5%B8%A6%E7%9A%84dns%E6%9C%8D%E5%8A%A1"/>
+    <id>http://hs.dury.cn/ubuntu-12-04-%E5%85%B3%E9%97%AD%E8%87%AA%E5%B8%A6%E7%9A%84dns%E6%9C%8D%E5%8A%A1</id>
     <published>2023-04-24T07:39:43.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -374,8 +375,8 @@
   
   <entry>
     <title>清理var_log_journal</title>
-    <link href="http://hs.dury.cn/2023/04/24/%E6%B8%85%E7%90%86var-log-journal/"/>
-    <id>http://hs.dury.cn/2023/04/24/%E6%B8%85%E7%90%86var-log-journal/</id>
+    <link href="http://hs.dury.cn/%E6%B8%85%E7%90%86var-log-journal"/>
+    <id>http://hs.dury.cn/%E6%B8%85%E7%90%86var-log-journal</id>
     <published>2023-04-24T07:25:53.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -398,8 +399,8 @@
   
   <entry>
     <title>go环境搭建</title>
-    <link href="http://hs.dury.cn/2023/04/24/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://hs.dury.cn/2023/04/24/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</id>
+    <link href="http://hs.dury.cn/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"/>
+    <id>http://hs.dury.cn/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA</id>
     <published>2023-04-24T07:19:44.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -428,8 +429,8 @@
   
   <entry>
     <title>wireguard安装</title>
-    <link href="http://hs.dury.cn/2023/04/24/wireguard%E5%AE%89%E8%A3%85/"/>
-    <id>http://hs.dury.cn/2023/04/24/wireguard%E5%AE%89%E8%A3%85/</id>
+    <link href="http://hs.dury.cn/wireguard%E5%AE%89%E8%A3%85"/>
+    <id>http://hs.dury.cn/wireguard%E5%AE%89%E8%A3%85</id>
     <published>2023-04-24T07:13:23.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -455,8 +456,8 @@
   
   <entry>
     <title>部分(已知所有)客户端无法创建中间层组件，之前建立了链接的能正常使用。</title>
-    <link href="http://hs.dury.cn/2023/04/24/%E9%83%A8%E5%88%86-%E5%B7%B2%E7%9F%A5%E6%89%80%E6%9C%89-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6%EF%BC%8C%E4%B9%8B%E5%89%8D%E5%BB%BA%E7%AB%8B%E4%BA%86%E9%93%BE%E6%8E%A5%E7%9A%84%E8%83%BD%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E3%80%82/"/>
-    <id>http://hs.dury.cn/2023/04/24/%E9%83%A8%E5%88%86-%E5%B7%B2%E7%9F%A5%E6%89%80%E6%9C%89-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6%EF%BC%8C%E4%B9%8B%E5%89%8D%E5%BB%BA%E7%AB%8B%E4%BA%86%E9%93%BE%E6%8E%A5%E7%9A%84%E8%83%BD%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E3%80%82/</id>
+    <link href="http://hs.dury.cn/%E9%83%A8%E5%88%86-%E5%B7%B2%E7%9F%A5%E6%89%80%E6%9C%89-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6%EF%BC%8C%E4%B9%8B%E5%89%8D%E5%BB%BA%E7%AB%8B%E4%BA%86%E9%93%BE%E6%8E%A5%E7%9A%84%E8%83%BD%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E3%80%82"/>
+    <id>http://hs.dury.cn/%E9%83%A8%E5%88%86-%E5%B7%B2%E7%9F%A5%E6%89%80%E6%9C%89-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BA%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6%EF%BC%8C%E4%B9%8B%E5%89%8D%E5%BB%BA%E7%AB%8B%E4%BA%86%E9%93%BE%E6%8E%A5%E7%9A%84%E8%83%BD%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E3%80%82</id>
     <published>2023-04-24T02:16:20.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
@@ -480,8 +481,8 @@
   
   <entry>
     <title>服务器IP</title>
-    <link href="http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1%E5%99%A8IP/"/>
-    <id>http://hs.dury.cn/2023/04/24/%E6%9C%8D%E5%8A%A1%E5%99%A8IP/</id>
+    <link href="http://hs.dury.cn/%E6%9C%8D%E5%8A%A1%E5%99%A8ip"/>
+    <id>http://hs.dury.cn/%E6%9C%8D%E5%8A%A1%E5%99%A8ip</id>
     <published>2023-04-24T02:13:30.000Z</published>
     <updated>2023-07-20T13:06:38.000Z</updated>
     
